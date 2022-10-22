@@ -53,8 +53,8 @@ extracciones, prestamos, pagos, recargas.
 
 Listado de Integrantes
 1. Balbuena, Fernando Nicolas DNI 38383822 correo: ferbalbu03@gmail.com
-2. Balbuena, Facundo DNI 42263319 correo: facundo.balbuena31@gmail.com
-3. Borda, Matías DNI: 43145033 correo: dediscoring@gmail.com
+2. Juan Ignacio Valladares	DNI: 44699685 correo: juan_1@outlook.es
+3. Ivan, Matías DNI: 43145033 correo: dediscoring@gmail.com
 4. Espinola, Renzo Oscar DNI: 33074277 correo: renzo.espinola87@gmail.com
 5. Giménez Ríos, Tatiana T. DNI: 33669320 correo: tatagimeri07@gmail.com
 6. Gutiérrez, Juana Natalia DNI: 31630665 correo: naty.rcia33@gmail.com
