@@ -1,10 +1,13 @@
 package ui;
 
+import model.CtaBancaria;
+import model.Domicilio;
+import model.Persona;
+
 import javax.swing.*;
 
 public class MenuPantallaPrincipalUI {
-
-    public int pantallaPrincipalOpciones(){
+    public int pantallaPrincipalOpciones(CtaBancaria ctaBancaria){
         return Integer.parseInt(JOptionPane.showInputDialog("                   SELECCIONE EL TIPO DE               \n" +
                 "           OPERACION QUE DESEA EFECTUAR              \n" +
                 "\n" +
