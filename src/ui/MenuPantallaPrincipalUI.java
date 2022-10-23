@@ -7,6 +7,7 @@ import model.Persona;
 import javax.swing.*;
 
 public class MenuPantallaPrincipalUI {
+
     public int pantallaPrincipalOpciones(CtaBancaria ctaBancaria){
         return Integer.parseInt(JOptionPane.showInputDialog("                   SELECCIONE EL TIPO DE               \n" +
                 "           OPERACION QUE DESEA EFECTUAR              \n" +

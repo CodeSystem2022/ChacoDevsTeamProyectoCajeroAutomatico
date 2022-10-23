@@ -1,8 +1,10 @@
 package components;
 
+import model.Movimientos;
+
 import javax.swing.*;
 
-public class ValidaIngresoMenu {
+public class Validaciones {
 
     public boolean validaIngMenuPrin(int opcion){
        if(opcion<1||opcion>5) {
@@ -12,4 +14,13 @@ public class ValidaIngresoMenu {
           return true;
        }
     }
+
+    public boolean validaSaldos(Movimientos movimientos){
+        if(movimientos.getSaldo()-movimientos.getMontoOperacion()<0) {
+            return false;
+        }else{
+            return true;
+        }
+    }
+
 }
