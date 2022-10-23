@@ -11,10 +11,10 @@ public class SubMenuPantallaMovCons {
                 "           OPERACION QUE DESEA EFECTUAR              \n" +
                 "\n" +
                 "         CONSULTA DE      TIPO DE    \n" +
-                "1<--------SALDOS                                                 CAMBIO------------>2\n" +
+                "1<--------SALDOS          CAMBIO------------>2\n" +
                 "\n" +
                 "3<--CONSULTA CBU      ULTIMOS\n" +
-                "                      MOVIMIENTOS------->4\n" +
+                "                                           MOVIMIENTOS------->4\n" +
                 "0<--------VOLVER                                  "));
     }
 
