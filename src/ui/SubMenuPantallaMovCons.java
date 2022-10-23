@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class SubMenuPantallaMovCons {
 
-    public int pantallaSubMenuMovconsultas(CtaBancaria ctaBancaria){
+    public static int pantallaSubMenuMovconsultas(CtaBancaria ctaBancaria){
         return Integer.parseInt(JOptionPane.showInputDialog("                   SELECCIONE EL TIPO DE               \n" +
                 "           OPERACION QUE DESEA EFECTUAR              \n" +
                 "\n" +
