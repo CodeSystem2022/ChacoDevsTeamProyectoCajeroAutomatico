@@ -63,4 +63,5 @@ Listado de Integrantes
 9. Gutiérrez, René Agustín DNI: 35686529 correo: yo_agustingutierrez@hotmail.com
 10. Valdez, Carlos Federico DNI: 40605106 correo: cvaldes250@gmail.com
 
-![Modelado de clases](https://user-images.githubusercontent.com/70241433/197429373-e42da233-1d2f-4a65-b53c-524a1f0bec77.png)
+
+![Modelado de clases](https://user-images.githubusercontent.com/70241433/197436731-58a86f52-a979-4269-983d-f8e7e18b5288.png)
