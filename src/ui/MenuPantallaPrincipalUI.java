@@ -8,8 +8,8 @@ import javax.swing.*;
 
 public class MenuPantallaPrincipalUI {
 
-    public int pantallaPrincipalOpciones(CtaBancaria ctaBancaria){
-        return Integer.parseInt(JOptionPane.showInputDialog("                   SELECCIONE EL TIPO DE               \n" +
+    public Integer pantallaPrincipalOpciones(){
+       String response=(JOptionPane.showInputDialog("                   SELECCIONE EL TIPO DE               \n" +
                 "           OPERACION QUE DESEA EFECTUAR              \n" +
                 "\n" +
                 "1<-TRANSFERENCIAS       EXTRACCIONES/    \n" +
@@ -19,6 +19,8 @@ public class MenuPantallaPrincipalUI {
                 "\n" +
                 "           CONSULTAS/                                 \n" +
                 "5<----MOVIMIENTOS                   SALIR----------->0"));
+       Integer responseToInt= response!=null?Integer.parseInt(response):null;
+       return responseToInt;
     }
 }
 

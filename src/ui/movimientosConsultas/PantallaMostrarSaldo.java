@@ -10,7 +10,8 @@ public class PantallaMostrarSaldo {
     public void mostrarSaldo(Movimientos movimientos) {
         JOptionPane.showMessageDialog(null,"             CONSULTA SALDO CAJA DE AHORRO           \n" +
                 "\n" +
-                "Saldo de la "+movimientos.getTipoCuentaBancaria()+" N°"+movimientos.getNumCta()+" $"+ movimientos.getSaldo()+"\n"+
+                "Saldo de la "+movimientos.getCtaBancaria().getTipoCuentaBancaria()+" N°"+movimientos.getCtaBancaria().getNumCta()+
+                " $"+ movimientos.getCtaBancaria().getSaldo()+"\n"+
                 "\n");
         SubMenuPantallaMovCons.pantallaSubMenuMovconsultas(movimientos);
     }
