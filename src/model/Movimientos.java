@@ -2,23 +2,25 @@ package model;
 
 import java.util.Date;
 
-public class Movimientos extends CtaBancaria {
+public class Movimientos{
+    private CtaBancaria ctaBancaria;
     private String tipoOperacion;
     private double montoOperacion;
     private Date fecha;
 
-    public Movimientos(String tipoOperacion, Date fecha,Double montoOperacion) {
+    public Movimientos(CtaBancaria ctaBancaria,String tipoOperacion, Date fecha,Double montoOperacion) {
+        this.ctaBancaria=ctaBancaria;
         this.tipoOperacion = tipoOperacion;
         this.fecha = fecha;
         this.montoOperacion=montoOperacion;
     }
 
-    public Movimientos(Persona persona, int numCta, double saldo, String tipoCuentaBancaria,
-                       String tipoOperacion, Date fecha,double montoOperacion) {
-        super(persona, numCta, saldo, tipoCuentaBancaria);
-        this.tipoOperacion = tipoOperacion;
-        this.fecha = fecha;
-        this.montoOperacion=montoOperacion;
+    public CtaBancaria getCtaBancaria() {
+        return ctaBancaria;
+    }
+
+    public void setCtaBancaria(CtaBancaria ctaBancaria) {
+        this.ctaBancaria = ctaBancaria;
     }
 
     public double getMontoOperacion() {

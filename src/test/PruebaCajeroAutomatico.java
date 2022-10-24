@@ -18,11 +18,10 @@ public class PruebaCajeroAutomatico {
     private static Persona persona = new Persona("Espinola","Renzo",domicilio,"33074277");
     private static CtaBancaria ctaBancaria = new CtaBancaria(persona,333225,5000,"Caja de Ahorro");
 
-    private static Movimientos movimiento = new Movimientos(persona,ctaBancaria.getNumCta(),
-            ctaBancaria.getSaldo(),ctaBancaria.getTipoCuentaBancaria(),"TRANSFERENCIA",new Date(),2500);
+    private static Movimientos movimiento = new Movimientos(ctaBancaria,"TRANSFERENCIA",new Date(),2500.50);
 
     public static void main(String[] args) {
-        int response= menuPantallaPrincipalUI.pantallaPrincipalOpciones(movimiento);
+        int response= menuPantallaPrincipalUI.pantallaPrincipalOpciones()!=null?menuPantallaPrincipalUI.pantallaPrincipalOpciones():0;
         opcionSeleccion(response);
     }
     public static void opcionSeleccion(int opcion) {
@@ -42,7 +41,7 @@ public class PruebaCajeroAutomatico {
                case 0: JOptionPane.showMessageDialog(null,"ADIOS GRACIAS POR USAR NUESTROS SERVICIOS");
                return;
            }
-            opcion = menuPantallaPrincipalUI.pantallaPrincipalOpciones(movimiento);
+            opcion = menuPantallaPrincipalUI.pantallaPrincipalOpciones();
         }
     }
 

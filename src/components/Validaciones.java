@@ -18,7 +18,7 @@ public class Validaciones {
     }
 
     public boolean validaSaldos(Movimientos movimientos){
-        if(movimientos.getSaldo()-movimientos.getMontoOperacion()<0) {
+        if(movimientos.getCtaBancaria().getSaldo()-movimientos.getMontoOperacion()<0) {
             return false;
         }else{
             return true;
