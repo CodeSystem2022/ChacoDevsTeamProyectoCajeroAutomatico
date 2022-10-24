@@ -21,8 +21,8 @@ public class PruebaCajeroAutomatico {
     private static Movimientos movimiento = new Movimientos(ctaBancaria,"TRANSFERENCIA",new Date(),2500.50);
 
     public static void main(String[] args) {
-        int response= menuPantallaPrincipalUI.pantallaPrincipalOpciones()!=null?menuPantallaPrincipalUI.pantallaPrincipalOpciones():0;
-        opcionSeleccion(response);
+        Integer response= menuPantallaPrincipalUI.pantallaPrincipalOpciones();
+        opcionSeleccion(response!=null?response:0);
     }
     public static void opcionSeleccion(int opcion) {
         Validaciones validaciones = new Validaciones();
