@@ -2,6 +2,7 @@ package ui;
 
 import components.Validaciones;
 import model.CtaBancaria;
+import ui.movimientosConsultas.PantallaMostrarMovimientos;
 import ui.movimientosConsultas.PantallaMostrarSaldo;
 
 import javax.swing.*;
@@ -22,6 +23,7 @@ public class SubMenuPantallaMovCons {
     }
     public static  void opcionSeleccion(int opcion, CtaBancaria ctaBancaria) {
         PantallaMostrarSaldo pantallaMostrarSaldo=new PantallaMostrarSaldo();
+        PantallaMostrarMovimientos pantallaMostrarMovimientos = new PantallaMostrarMovimientos();
         Validaciones validaciones = new Validaciones();
         while (validaciones.validaIngMenuPrin(opcion)) {
             switch(opcion) {
@@ -33,6 +35,7 @@ public class SubMenuPantallaMovCons {
                 case 3:
                     break;
                 case 4:
+                    pantallaMostrarMovimientos.mostrarMoviemientos(ctaBancaria);
                     break;
                 case 0:
                     break;

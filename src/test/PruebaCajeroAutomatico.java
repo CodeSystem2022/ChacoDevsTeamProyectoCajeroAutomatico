@@ -19,14 +19,18 @@ public class PruebaCajeroAutomatico {
     private static Domicilio domicilio = new Domicilio("Barrio Guiraldes manzana1","Chaco","Resistencia");
     private static Persona persona = new Persona("Espinola","Renzo",domicilio,"33074277");
     private static CtaBancaria ctaBancaria = new CtaBancaria(persona,333225,5000,"Caja de Ahorro");
-    private static Movimiento movimiento = new Movimiento("TRANSFERENCIA",new Date(),2500.50);
+    private static Movimiento movimiento = new Movimiento("TRANSFERENCIA",new Date(),-2500.50);
+    private static Movimiento movimiento2 = new Movimiento("DEPOSITO",new Date(),3500.50);
 
     public static void main(String[] args) {
         Integer response= menuPantallaPrincipalUI.pantallaPrincipalOpciones();
         List<Movimiento> movimientos= new ArrayList<>();
         movimientos.add(movimiento);
+        movimientos.add(movimiento2);
         ctaBancaria.setMovimientos(movimientos);
-        ctaBancaria.actualizaSaldoCta(movimientos.get(0));
+        for(Movimiento mov:movimientos) {
+            ctaBancaria.actualizaSaldoCta(mov);
+        }
         opcionSeleccion(response!=null?response:0);
     }
     public static void opcionSeleccion(int opcion) {
