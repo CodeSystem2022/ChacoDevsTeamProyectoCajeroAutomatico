@@ -66,17 +66,24 @@ public class CtaBancaria {
     public void setTipoCuentaBancaria(String tipoCuentaBancaria) {
         this.tipoCuentaBancaria = tipoCuentaBancaria;
     }
-    public double sumaSaldo(double saldo){
-        return this.saldo = this.getSaldo()+saldo;
-    }
-    public boolean validarSaldo(double saldo){
-        return this.saldo - saldo > 0;
-    }
-    public double  restaSaldo( double saldo){
-        if (validarSaldo(saldo))
-            return this.saldo-saldo;
-        else
-            return 0;
 
+    public void sumaSaldo(double montoOperacion){
+        this.saldo = this.saldo+montoOperacion;
+    }
+
+    public boolean validarSaldo(double montoOperacion){
+        return this.saldo - montoOperacion > 0;
+    }
+
+    public void restaSaldo( double montoOperacion){
+        if (validarSaldo(montoOperacion))
+            this.saldo=this.saldo+montoOperacion;
+    }
+
+    public void actualizaSaldoCta(Movimientos movimientos){
+        if (movimientos.getMontoOperacion()<0){
+            restaSaldo(movimientos.getMontoOperacion());
+        }else
+            sumaSaldo(movimientos.getMontoOperacion());
     }
 }
