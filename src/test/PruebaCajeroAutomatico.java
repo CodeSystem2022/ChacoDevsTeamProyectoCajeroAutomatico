@@ -3,7 +3,7 @@ import components.Validaciones;
 
 import model.CtaBancaria;
 import model.Domicilio;
-import model.Movimientos;
+import model.Movimiento;
 import model.Persona;
 import ui.*;
 
@@ -19,11 +19,11 @@ public class PruebaCajeroAutomatico {
     private static Domicilio domicilio = new Domicilio("Barrio Guiraldes manzana1","Chaco","Resistencia");
     private static Persona persona = new Persona("Espinola","Renzo",domicilio,"33074277");
     private static CtaBancaria ctaBancaria = new CtaBancaria(persona,333225,5000,"Caja de Ahorro");
-    private static Movimientos movimiento = new Movimientos(ctaBancaria,"TRANSFERENCIA",new Date(),2500.50);
+    private static Movimiento movimiento = new Movimiento("TRANSFERENCIA",new Date(),2500.50);
 
     public static void main(String[] args) {
         Integer response= menuPantallaPrincipalUI.pantallaPrincipalOpciones();
-        List<Movimientos> movimientos= new ArrayList<>();
+        List<Movimiento> movimientos= new ArrayList<>();
         movimientos.add(movimiento);
         ctaBancaria.setMovimientos(movimientos);
         ctaBancaria.actualizaSaldoCta(movimientos.get(0));

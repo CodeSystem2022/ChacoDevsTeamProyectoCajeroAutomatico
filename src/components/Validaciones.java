@@ -1,6 +1,6 @@
 package components;
 
-import model.Movimientos;
+import model.CtaBancaria;
 
 import javax.swing.*;
 
@@ -16,9 +16,9 @@ public class Validaciones {
           else{return true;
        }
     }
-
-    public boolean validaSaldos(Movimientos movimientos){
-        if(movimientos.getCtaBancaria().getSaldo()-movimientos.getMontoOperacion()<0) {
+    //TODO
+    public boolean validaSaldos(CtaBancaria ctaBancaria){
+        if(ctaBancaria.getSaldo()- ctaBancaria.getMovimientos().get(0).getMontoOperacion()<0) {
             return false;
         }else{
             return true;

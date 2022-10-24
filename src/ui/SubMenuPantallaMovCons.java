@@ -2,13 +2,9 @@ package ui;
 
 import components.Validaciones;
 import model.CtaBancaria;
-import test.PruebaCajeroAutomatico;
 import ui.movimientosConsultas.PantallaMostrarSaldo;
-import model.Movimientos;
 
 import javax.swing.*;
-
-import static test.PruebaCajeroAutomatico.menuPantallaPrincipalUI;
 
 public class SubMenuPantallaMovCons {
 

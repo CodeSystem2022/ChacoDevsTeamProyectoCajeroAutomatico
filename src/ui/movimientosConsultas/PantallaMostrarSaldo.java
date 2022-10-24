@@ -1,7 +1,6 @@
 package ui.movimientosConsultas;
 
 import model.CtaBancaria;
-import model.Movimientos;
 import ui.SubMenuPantallaMovCons;
 
 import javax.swing.*;

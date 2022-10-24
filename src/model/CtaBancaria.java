@@ -7,7 +7,7 @@ public class CtaBancaria {
     private int numCta;
     private double saldo;
     private String tipoCuentaBancaria;
-    private List<Movimientos> movimientos;
+    private List<Movimiento> movimientos;
 
     public CtaBancaria() {
     }
@@ -19,7 +19,7 @@ public class CtaBancaria {
         this.tipoCuentaBancaria = tipoCuentaBancaria;
     }
 
-    public CtaBancaria(Persona persona, int numCta, double saldo, String tipoCuentaBancaria, List<Movimientos> movimientos) {
+    public CtaBancaria(Persona persona, int numCta, double saldo, String tipoCuentaBancaria, List<Movimiento> movimientos) {
         this.persona = persona;
         this.numCta = numCta;
         this.saldo = saldo;
@@ -27,11 +27,11 @@ public class CtaBancaria {
         this.movimientos = movimientos;
     }
 
-    public List<Movimientos> getMovimientos() {
+    public List<Movimiento> getMovimientos() {
         return movimientos;
     }
 
-    public void setMovimientos(List<Movimientos> movimientos) {
+    public void setMovimientos(List<Movimiento> movimientos) {
         this.movimientos = movimientos;
     }
 
@@ -80,10 +80,10 @@ public class CtaBancaria {
             this.saldo=this.saldo+montoOperacion;
     }
 
-    public void actualizaSaldoCta(Movimientos movimientos){
-        if (movimientos.getMontoOperacion()<0){
-            restaSaldo(movimientos.getMontoOperacion());
+    public void actualizaSaldoCta(Movimiento movimiento){
+        if (movimiento.getMontoOperacion()<0){
+            restaSaldo(movimiento.getMontoOperacion());
         }else
-            sumaSaldo(movimientos.getMontoOperacion());
+            sumaSaldo(movimiento.getMontoOperacion());
     }
 }
