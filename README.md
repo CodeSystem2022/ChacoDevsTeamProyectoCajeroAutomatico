@@ -62,3 +62,5 @@ Listado de Integrantes
 8. Gutiérrez, Juan Carlos DNI: 28661402 correo: diosjuanvero2015@gmail.com
 9. Gutiérrez, René Agustín DNI: 35686529 correo: yo_agustingutierrez@hotmail.com
 10. Valdez, Carlos Federico DNI: 40605106 correo: cvaldes250@gmail.com
+
+![Modelado de clases](https://user-images.githubusercontent.com/70241433/197429373-e42da233-1d2f-4a65-b53c-524a1f0bec77.png)
