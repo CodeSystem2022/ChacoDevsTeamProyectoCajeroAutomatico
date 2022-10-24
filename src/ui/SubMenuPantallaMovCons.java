@@ -21,7 +21,6 @@ public class SubMenuPantallaMovCons {
                 "3<--CONSULTA CBU      ULTIMOS\n" +
                 "                                           MOVIMIENTOS------->4\n" +
                 "0<--------VOLVER                                  "));
-
         opcionSeleccion(opcion,movimientos);
     }
     public static  void opcionSeleccion(int opcion, Movimientos movimientos) {
@@ -39,9 +38,9 @@ public class SubMenuPantallaMovCons {
                 case 4:
                     break;
                 case 0:
-                    menuPantallaPrincipalUI.pantallaPrincipalOpciones(movimientos);
                     break;
             }
+            opcion=-10;
         }
     }
 

@@ -7,6 +7,7 @@ import model.Movimientos;
 import model.Persona;
 import ui.*;
 
+import javax.swing.*;
 import java.util.Date;
 
 public class PruebaCajeroAutomatico {
@@ -38,7 +39,10 @@ public class PruebaCajeroAutomatico {
                    break;
                case 5:SubMenuPantallaMovCons.pantallaSubMenuMovconsultas(movimiento);
                break;
+               case 0: JOptionPane.showMessageDialog(null,"ADIOS GRACIAS POR USAR NUESTROS SERVICIOS");
+               return;
            }
+            opcion = menuPantallaPrincipalUI.pantallaPrincipalOpciones(movimiento);
         }
     }
 
