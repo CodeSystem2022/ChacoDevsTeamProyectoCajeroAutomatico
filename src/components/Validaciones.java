@@ -7,11 +7,13 @@ import javax.swing.*;
 public class Validaciones {
 
     public boolean validaIngMenuPrin(int opcion){
-       if(opcion<1||opcion>5) {
+       if((opcion<0||opcion>5)&&opcion!=-10) {
            JOptionPane.showMessageDialog(null, "INGRESO ERRONEO");
            return false;
-       }else{
-          return true;
+       }else if(opcion==-10) {
+           return false;
+       }
+          else{return true;
        }
     }
 
