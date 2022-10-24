@@ -1,10 +1,13 @@
 package model;
 
+import java.util.List;
+
 public class CtaBancaria {
     private Persona persona;
     private int numCta;
     private double saldo;
     private String tipoCuentaBancaria;
+    private List<Movimientos> movimientos;
 
     public CtaBancaria() {
     }
@@ -14,6 +17,22 @@ public class CtaBancaria {
         this.numCta = numCta;
         this.saldo = saldo;
         this.tipoCuentaBancaria = tipoCuentaBancaria;
+    }
+
+    public CtaBancaria(Persona persona, int numCta, double saldo, String tipoCuentaBancaria, List<Movimientos> movimientos) {
+        this.persona = persona;
+        this.numCta = numCta;
+        this.saldo = saldo;
+        this.tipoCuentaBancaria = tipoCuentaBancaria;
+        this.movimientos = movimientos;
+    }
+
+    public List<Movimientos> getMovimientos() {
+        return movimientos;
+    }
+
+    public void setMovimientos(List<Movimientos> movimientos) {
+        this.movimientos = movimientos;
     }
 
     public Persona getPersona() {
