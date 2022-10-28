@@ -41,7 +41,7 @@ public class PruebaCajeroAutomatico {
                    break;
                case 2:
                    break;
-               case 3:
+               case 3:PantallaSubMenuPrestamos.generarPantallaPrestamos(ctaBancaria);
                    break;
                case 4:
                    break;
