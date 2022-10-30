@@ -7,6 +7,7 @@ import model.Movimiento;
 import model.Persona;
 import ui.*;
 import ui.transferencia.SubPantallaTransferencias;
+import ui.prestamos.SubPantallaPrestamos;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class PruebaCajeroAutomatico {
                    break;
                case 2:
                    break;
-               case 3:
+               case 3:PantallaSubMenuPrestamos.generarPantallaPrestamos(ctaBancaria);
                    break;
                case 4:
                    break;
@@ -50,7 +51,7 @@ public class PruebaCajeroAutomatico {
                break;
                case 0: JOptionPane.showMessageDialog(null,"ADIOS GRACIAS POR USAR NUESTROS SERVICIOS");
                return;
-           }
+           }    
             opcion = menuPantallaPrincipalUI.pantallaPrincipalOpciones();
         }
     }
