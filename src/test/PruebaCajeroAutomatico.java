@@ -6,6 +6,7 @@ import model.Domicilio;
 import model.Movimiento;
 import model.Persona;
 import ui.*;
+import ui.prestamos.SubPantallaPrestamos;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -49,7 +50,7 @@ public class PruebaCajeroAutomatico {
                break;
                case 0: JOptionPane.showMessageDialog(null,"ADIOS GRACIAS POR USAR NUESTROS SERVICIOS");
                return;
-           }
+           }    
             opcion = menuPantallaPrincipalUI.pantallaPrincipalOpciones();
         }
     }
