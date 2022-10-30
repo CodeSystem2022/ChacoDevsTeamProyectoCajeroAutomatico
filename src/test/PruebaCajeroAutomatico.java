@@ -6,6 +6,7 @@ import model.Domicilio;
 import model.Movimiento;
 import model.Persona;
 import ui.*;
+import ui.prestamos.SubPantallaPrestamos;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class PruebaCajeroAutomatico {
         Validaciones validaciones = new Validaciones();
         while (validaciones.validaIngMenuPrin(opcion)) {
            switch(opcion) {
-               case 1:
+               case 1:SubPantallaPrestamos.pantallaSubMenuPrestamosSelMonto();
                    break;
                case 2:
                    break;
