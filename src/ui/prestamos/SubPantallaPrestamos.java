@@ -6,7 +6,7 @@ import model.CtaBancaria;
 
 public class SubPantallaPrestamos {
   
-    public static void pantallaSubMenuPrestamosSelMonto(){
+    public static void pantallaSubMenuPrestamosSelMonto(CtaBancaria ctabancaria){
         final int opcion = Integer.parseInt(JOptionPane.showInputDialog(
             "                        PRESTAMOS               \n" +
             "           \n"+
