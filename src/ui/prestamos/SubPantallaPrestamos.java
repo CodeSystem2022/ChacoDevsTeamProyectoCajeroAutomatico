@@ -8,28 +8,29 @@ public class SubPantallaPrestamos {
   
     public static void pantallaSubMenuPrestamosSelMonto(){
         final int opcion = Integer.parseInt(JOptionPane.showInputDialog(
-            "               PRESTAMOS               \n" +
+            "                        PRESTAMOS               \n" +
             "           \n"+
             "        INGRESE EL NRO. DE OPCIÓN      \n"+
-            "       PRESTAMO QUE DESEA SOLICITAR   \n"+
-
-            "OPCIÓN        \n"+        "IMPORTE($)         \n"+
-            "01=           \n"+        "5000         \n"+
-            "OPCIÓN        \n"+           
-            "02=           \n"+        "4000         \n"+
-            "OPCIÓN        \n"+        
-            "03=           \n"+        "3000         \n"+
-            "OPCIÓN        \n"+        
-            "04=           \n"+        "2000         \n"+
-            "OPCIÓN        \n"+        
-            "05=           \n"+        "1500         \n"+
-            "OPCIÓN        \n"+        
-            "06=           \n"+        "1000         \n"+
-            "              \n"+        
-            "OPCIÓN        \n"+        
-            "07=           \n"+        "<-------------MODIFICAR         \n"+
-            "OPCIÓN        \n"+        
-            "00=           \n"+        "<-------------VOLVER            \n"));
+            "  PRESTAMO QUE DESEA SOLICITAR   \n"+
+            "                                  \n"+
+            "OPCIONES        "+        "IMPORTE($)   \n"+
+            "OPCIÓN        "+                   
+            "01=           "+        "5000         \n"+
+            "OPCIÓN        "+           
+            "02=           "+        "4000         \n"+
+            "OPCIÓN        "+        
+            "03=           "+        "3000         \n"+
+            "OPCIÓN        "+        
+            "04=           "+        "2000         \n"+
+            "OPCIÓN        "+        
+            "05=           "+        "1500         \n"+
+            "OPCIÓN        "+        
+            "06=           "+        "1000         \n"+
+            "              \n"+
+            "OPCIÓN        "+        
+            "07=           "+        "<-------------MODIFICAR         \n"+
+            "OPCIÓN        "+        
+            "00=           "+        "<-------------VOLVER            \n"));
     }
 }
     

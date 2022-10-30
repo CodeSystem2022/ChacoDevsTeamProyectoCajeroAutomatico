@@ -38,7 +38,7 @@ public class PruebaCajeroAutomatico {
         Validaciones validaciones = new Validaciones();
         while (validaciones.validaIngMenuPrin(opcion)) {
            switch(opcion) {
-               case 1:SubPantallaPrestamos.pantallaSubMenuPrestamosSelMonto();
+               case 1:
                    break;
                case 2:
                    break;
@@ -50,7 +50,7 @@ public class PruebaCajeroAutomatico {
                break;
                case 0: JOptionPane.showMessageDialog(null,"ADIOS GRACIAS POR USAR NUESTROS SERVICIOS");
                return;
-           }
+           }    
             opcion = menuPantallaPrincipalUI.pantallaPrincipalOpciones();
         }
     }
