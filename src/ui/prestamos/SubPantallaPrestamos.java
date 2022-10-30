@@ -30,7 +30,7 @@ public class SubPantallaPrestamos {
             "OPCIÓN        "+        
             "07=           "+        "<-------------MODIFICAR         \n"+
             "OPCIÓN        "+        
-            
+            "00=           "+        "<-------------VOLVER            \n"));
     }
 }
     
