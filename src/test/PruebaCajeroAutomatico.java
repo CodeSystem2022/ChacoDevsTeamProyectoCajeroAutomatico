@@ -6,7 +6,9 @@ import model.Domicilio;
 import model.Movimiento;
 import model.Persona;
 import ui.*;
+import ui.transferencia.SubPantallaTransferencias;
 import ui.prestamos.SubPantallaPrestamos;
+
 
 import javax.swing.*;
 import java.util.ArrayList;
