@@ -7,6 +7,7 @@ import model.Movimiento;
 import model.Persona;
 import ui.*;
 import ui.transferencia.SubPantallaTransferencias;
+import ui.prestamos.PantallaCuota;
 import ui.prestamos.SubPantallaPrestamos;
 
 
@@ -40,7 +41,7 @@ public class PruebaCajeroAutomatico {
         Validaciones validaciones = new Validaciones();
         while (validaciones.validaIngMenuPrin(opcion)) {
            switch(opcion) {
-               case 1:
+               case 1:PantallaCuota.PantallaSeleccionCuota(ctaBancaria);
                    break;
                case 2:
                    break;
