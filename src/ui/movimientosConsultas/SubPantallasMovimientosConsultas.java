@@ -55,4 +55,13 @@ public class SubPantallasMovimientosConsultas {
         pantallaMovCon.pantallaSubMenuMovconsultas(cuentaBancaria);
 
     }
+    public void consultaCBU(CtaBancaria cuentaBancaria){
+        JOptionPane.showMessageDialog(null,"              CONSULTA CBU            \n" +
+                "\n" +
+                cuentaBancaria.getTipoCuentaBancaria()+" N° " + cuentaBancaria.getNumCta()+"\n" +
+                "\n" +
+                "CBU:"+cuentaBancaria.getCBU()+"\n");
+        pantallaMovCon.pantallaSubMenuMovconsultas(cuentaBancaria);
+
+    }
 }
