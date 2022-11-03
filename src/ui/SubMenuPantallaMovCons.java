@@ -10,7 +10,7 @@ import javax.swing.*;
 
 public class SubMenuPantallaMovCons {
 
-    public static void pantallaSubMenuMovconsultas(CtaBancaria ctaBancaria){
+    public void pantallaSubMenuMovconsultas(CtaBancaria ctaBancaria){
         int opcion= Integer.parseInt(JOptionPane.showInputDialog("                   SELECCIONE EL TIPO DE               \n" +
                 "           OPERACION QUE DESEA EFECTUAR              \n" +
                 "\n" +
@@ -22,7 +22,7 @@ public class SubMenuPantallaMovCons {
                 "0<--------VOLVER                                  "));
         opcionSeleccion(opcion,ctaBancaria);
     }
-    public static  void opcionSeleccion(int opcion, CtaBancaria ctaBancaria) {
+    public void opcionSeleccion(int opcion, CtaBancaria ctaBancaria) {
         PantallaMostrarSaldo pantallaMostrarSaldo=new PantallaMostrarSaldo();
         PantallaMostrarMovimientos pantallaMostrarMovimientos = new PantallaMostrarMovimientos();
         PantallaTipoCambio  pantallaTipoCambio =new PantallaTipoCambio();

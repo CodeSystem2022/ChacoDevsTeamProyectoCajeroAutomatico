@@ -38,6 +38,7 @@ public class PruebaCajeroAutomatico {
     }
     public static void opcionSeleccion(int opcion) {
         Validaciones validaciones = new Validaciones();
+        SubMenuPantallaMovCons pantallaMovCons = new SubMenuPantallaMovCons();
         while (validaciones.validaIngMenuPrin(opcion)) {
            switch(opcion) {
                case 1:
@@ -48,7 +49,7 @@ public class PruebaCajeroAutomatico {
                    break;
                case 4:
                    break;
-               case 5:SubMenuPantallaMovCons.pantallaSubMenuMovconsultas(ctaBancaria);
+               case 5:pantallaMovCons.pantallaSubMenuMovconsultas(ctaBancaria);
                break;
                case 0: JOptionPane.showMessageDialog(null,"ADIOS GRACIAS POR USAR NUESTROS SERVICIOS");
                return;
