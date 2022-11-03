@@ -9,6 +9,7 @@ import javax.swing.*;
 public class PantallaMostrarMovimientos {
 
     public void mostrarMoviemientos(CtaBancaria ctaBancaria) {
+        SubMenuPantallaMovCons pantallaMovCons = new SubMenuPantallaMovCons();
         int cont=1;
         String listado=new String();
         for(Movimiento movimiento: ctaBancaria.getMovimientos()){
@@ -23,6 +24,6 @@ public class PantallaMostrarMovimientos {
                         "\n"+
                         "Saldo de la  "+ctaBancaria.getTipoCuentaBancaria()+" N°"+ctaBancaria.getNumCta()+" $"+ctaBancaria.getSaldo()
                 ,"MOVIMIENTOS/CONSULTAS",1);
-        SubMenuPantallaMovCons.pantallaSubMenuMovconsultas(ctaBancaria);
+        pantallaMovCons.pantallaSubMenuMovconsultas(ctaBancaria);
     }
 }
