@@ -30,7 +30,7 @@ public class SubMenuPantallaMovCons {
                     break;
                 case 2: subPantallasMovimientosConsultas.tipoCambio(ctaBancaria);
                     break;
-                case 3:
+                case 3: subPantallasMovimientosConsultas.consultaCBU(ctaBancaria);
                     break;
                 case 4:
                     subPantallasMovimientosConsultas.mostrarMovimientos(ctaBancaria);
