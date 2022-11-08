@@ -41,7 +41,7 @@ public class PruebaCajeroAutomatico {
         Validaciones validaciones = new Validaciones();
         while (validaciones.validaIngMenuPrin(opcion)) {
            switch(opcion) {
-               case 1:PantallaCuota.PantallaSeleccionCuota(ctaBancaria);
+               case 1:
                    break;
                case 2:
                    break;

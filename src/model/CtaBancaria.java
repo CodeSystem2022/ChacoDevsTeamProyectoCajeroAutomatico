@@ -2,6 +2,8 @@ package model;
 
 import java.util.List;
 
+import ui.prestamos.PantallaCuota;
+
 public class CtaBancaria {
     private Persona persona;
     private int numCta;
