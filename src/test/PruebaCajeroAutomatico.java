@@ -6,6 +6,7 @@ import model.Domicilio;
 import model.Movimiento;
 import model.Persona;
 import ui.*;
+import ui.prestamos.DestinoPrestamoSubPantalla;
 import ui.transferencia.SubPantallaTransferencias;
 import ui.prestamos.SubPantallaPrestamos;
 
@@ -42,6 +43,7 @@ public class PruebaCajeroAutomatico {
         while (validaciones.validaIngMenuPrin(opcion)) {
            switch(opcion) {
                case 1:
+                   DestinoPrestamoSubPantalla.destinoPrestamo(ctaBancaria);
                    break;
                case 2:
                    break;
