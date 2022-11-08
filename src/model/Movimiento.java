@@ -12,6 +12,9 @@ public class Movimiento {
         this.fecha = fecha;
         this.montoOperacion=montoOperacion;
     }
+    public Movimiento(){
+        
+    }
 
     public double getMontoOperacion() {
         return montoOperacion;

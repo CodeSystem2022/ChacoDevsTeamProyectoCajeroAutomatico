@@ -1,6 +1,9 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import ui.prestamos.PantallaCuota;
 
 public class CtaBancaria {
     private Persona persona;
@@ -45,6 +48,16 @@ public class CtaBancaria {
 
     public void setMovimientos(List<Movimiento> movimientos) {
         this.movimientos = movimientos;
+    }
+
+    public void setMovimiento(Movimiento movimiento){
+        List<Movimiento> movimientoList = new ArrayList<>();
+        movimientoList.add(movimiento);
+        if(this.getMovimientos()!=null)
+            this.getMovimientos().add(movimiento);
+        else
+            this.setMovimientos(movimientoList);
+        this.actualizaSaldoCta(movimiento);
     }
 
     public Persona getPersona() {

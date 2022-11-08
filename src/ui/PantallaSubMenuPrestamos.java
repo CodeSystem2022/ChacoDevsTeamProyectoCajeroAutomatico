@@ -5,6 +5,8 @@ import ui.prestamos.SubPantallaPrestamos;
 
 import javax.swing.*;
 
+import static test.PruebaCajeroAutomatico.menuPantallaPrincipalUI;
+
 public class PantallaSubMenuPrestamos {
 
     public static void generarPantallaPrestamos(CtaBancaria ctaBancaria){
@@ -22,16 +24,17 @@ public class PantallaSubMenuPrestamos {
         opcionSeleccion(opcion, ctaBancaria);
     }
 
-    public static void opcionSeleccion(int opcion, CtaBancaria ctaBancaria){
-        while (opcion >= 0 && opcion <= 1){
-            switch(opcion) {
-                case 0:
-                    opcion = -10;
-                    break;
+    public static void opcionSeleccion(int opcion, CtaBancaria ctaBancaria) {
+            switch (opcion) {
                 case 1:
                     SubPantallaPrestamos.pantallaSubMenuPrestamosSelMonto(ctaBancaria);
                     break;
+                case 0:
+                    break;
+                default:
+                    generarPantallaPrestamos(ctaBancaria);
+                    break;
             }
-        }
     }
+
 }

@@ -23,7 +23,7 @@ public class SubMenuPantallaMovCons {
     public void opcionSeleccion(int opcion, CtaBancaria ctaBancaria) {
         SubPantallasMovimientosConsultas subPantallasMovimientosConsultas = new SubPantallasMovimientosConsultas();
         Validaciones validaciones = new Validaciones();
-        while (validaciones.validaIngMenuPrin(opcion)) {
+        while (validaciones.validaIngMenuPrin(opcion,5)) {
             switch(opcion) {
                 case 1:
                     subPantallasMovimientosConsultas.mostrarSaldo(ctaBancaria);
