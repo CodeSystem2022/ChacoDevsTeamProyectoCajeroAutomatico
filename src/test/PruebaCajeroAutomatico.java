@@ -26,14 +26,8 @@ public class PruebaCajeroAutomatico {
     private static Movimiento movimiento2 = new Movimiento("DEPOSITO",new Date(),3500.50);
 
     public static void main(String[] args) {
-        List<Movimiento> movimientos= new ArrayList<>();
-        movimientos.add(movimiento);
-        movimientos.add(movimiento2);
         ctaBancaria.setMovimiento(movimiento);
         ctaBancaria.setMovimiento(movimiento2);
-        for(Movimiento mov:movimientos) {
-            ctaBancaria.actualizaSaldoCta(mov);
-        }
         Integer response= menuPantallaPrincipalUI.pantallaPrincipalOpciones();
         opcionSeleccion(response!=null?response:0);
     }

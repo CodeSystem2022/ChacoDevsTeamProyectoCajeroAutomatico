@@ -55,6 +55,7 @@ public class CtaBancaria {
             this.getMovimientos().add(movimiento);
         else
             this.setMovimientos(movimientoList);
+        this.actualizaSaldoCta(movimiento);
     }
 
     public Persona getPersona() {
