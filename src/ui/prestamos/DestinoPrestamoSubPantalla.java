@@ -33,15 +33,11 @@ public class DestinoPrestamoSubPantalla {
             try{
                 Integer.parseInt(respuesta);
             }catch (NumberFormatException nfe){
-                // Si la entrada no se puede parsear, por lo tanto no es un numero asi que
-                // le asignamos a la fuerza un numero fuera de rango para que la comprobacion no se
-                // rompa y vuelva a pedir el ingreso de la opción
                 // si la entrada es un caracter y no un numero para que la comprobacion de abajo no se rompa le asignamos
                 // el numero 9 que este fuera del rango de las opciones para que no pase la comprobacion y vuelva a pedir
                 // el ingreso de una opcion correcta
                 respuesta = "9";
             }
-            //comprobar que es un numero->true-->seguir  false---no hacer comprobacion de abajo
         }while(Integer.parseInt(respuesta) < 1 || Integer.parseInt(respuesta) > 8);
 
 
@@ -72,7 +68,8 @@ public class DestinoPrestamoSubPantalla {
                 respuesta = "REFINANCIACIÓN/CANCEL PASIVOS";
                 break;
         }
-        JOptionPane.showMessageDialog(null, "su respuesta ha sido "+respuesta);
+        // La linea de abajo era para probar el retorno del string
+        //JOptionPane.showMessageDialog(null, "su respuesta ha sido "+respuesta);
         return respuesta;
     }
 }

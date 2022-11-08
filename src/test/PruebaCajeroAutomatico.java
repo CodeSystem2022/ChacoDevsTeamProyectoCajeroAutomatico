@@ -43,7 +43,6 @@ public class PruebaCajeroAutomatico {
         while (validaciones.validaIngMenuPrin(opcion)) {
            switch(opcion) {
                case 1:
-                   DestinoPrestamoSubPantalla.destinoPrestamo(ctaBancaria);
                    break;
                case 2:
                    break;
