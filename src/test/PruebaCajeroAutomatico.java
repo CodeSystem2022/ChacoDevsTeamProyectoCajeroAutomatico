@@ -55,7 +55,7 @@ public class PruebaCajeroAutomatico {
                    opcionSeleccion(opcion);
                break;
            }
-            opcion = menuPantallaPrincipalUI.pantallaPrincipalOpciones();
+           opcion = menuPantallaPrincipalUI.pantallaPrincipalOpciones();
            opcionSeleccion(opcion);
         }
     }

@@ -24,25 +24,17 @@ public class PantallaSubMenuPrestamos {
         opcionSeleccion(opcion, ctaBancaria);
     }
 
-    public static void opcionSeleccion(int opcion, CtaBancaria ctaBancaria){
-        while (opcion >= 0 && opcion <= 1){
-            switch(opcion) {
+    public static void opcionSeleccion(int opcion, CtaBancaria ctaBancaria) {
+            switch (opcion) {
                 case 1:
                     SubPantallaPrestamos.pantallaSubMenuPrestamosSelMonto(ctaBancaria);
                     break;
                 case 0:
-                    opcion = -10;
                     break;
                 default:
                     generarPantallaPrestamos(ctaBancaria);
                     break;
             }
-        }
-        if(opcion!=-10) {
-            generarPantallaPrestamos(ctaBancaria);
-        }else{
-            menuPantallaPrincipalUI.pantallaPrincipalOpciones();
-        }
     }
 
 }

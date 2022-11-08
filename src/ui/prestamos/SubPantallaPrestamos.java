@@ -4,6 +4,8 @@ import javax.swing.JOptionPane;
 
 import model.CtaBancaria;
 
+import static test.PruebaCajeroAutomatico.menuPantallaPrincipalUI;
+
 public class SubPantallaPrestamos {
   
     public static void pantallaSubMenuPrestamosSelMonto(CtaBancaria ctabancaria){
@@ -33,35 +35,44 @@ public class SubPantallaPrestamos {
             "00=           "+        "<-------------VOLVER            \n"));
         procesarMonto(ctabancaria,opcion);
     }
-    public static int procesarMonto(CtaBancaria ctaBancaria, int opcion) {
-        int monto = 0;
+    public static void procesarMonto(CtaBancaria ctaBancaria, int opcion) {
+        double monto = 0;
         switch (opcion) {
             case 1:
                 monto = 5000;
+                PantallaCuota.PantallaSeleccionCuota(ctaBancaria,monto);
                 break;
             case 2:
                 monto = 4000;
+                PantallaCuota.PantallaSeleccionCuota(ctaBancaria,monto);
                 break;
             case 3:
                 monto = 3000;
+                PantallaCuota.PantallaSeleccionCuota(ctaBancaria,monto);
                 break;
             case 4:
                 monto = 2000;
+                PantallaCuota.PantallaSeleccionCuota(ctaBancaria,monto);
                 break;
             case 5:
                 monto = 1500;
+                PantallaCuota.PantallaSeleccionCuota(ctaBancaria,monto);
                 break;
             case 6:
                 monto = 1000;
+                PantallaCuota.PantallaSeleccionCuota(ctaBancaria,monto);
                 break;
             case 7:
                 monto = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el monto de prestamo"));
+                PantallaCuota.PantallaSeleccionCuota(ctaBancaria,monto);
                 break;
+            case 0:menuPantallaPrincipalUI.pantallaPrincipalOpciones();
+            break;
             default:
                 JOptionPane.showMessageDialog(null,"INGRESO ERRONEO");
                 break;
         }
-        return monto;
+
     }
 }
     
