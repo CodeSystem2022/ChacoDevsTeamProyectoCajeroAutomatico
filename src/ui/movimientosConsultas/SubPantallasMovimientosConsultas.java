@@ -15,8 +15,9 @@ public class SubPantallasMovimientosConsultas {
     public void mostrarMovimientos(CtaBancaria ctaBancaria) {
         int cont=1;
         String listado=new String();
+        DecimalFormat df = new DecimalFormat("0.00");
         for(Movimiento movimiento: ctaBancaria.getMovimientos()){
-            listado+="\nN°:"+cont+" - FECHA: "+movimiento.getFecha().toInstant().toString() +" - CONCEPTO: "+movimiento.getTipoOperacion()+ " $ "+movimiento.getMontoOperacion()+"";
+            listado+="\nN°:"+cont+" - FECHA: "+movimiento.getFecha().toInstant().toString() +" - CONCEPTO: "+movimiento.getTipoOperacion()+ " $ "+df.format(movimiento.getMontoOperacion())+"";
             cont+=1;}
 
         JOptionPane.showMessageDialog(null,"                                  ULTIMOS MOVIMIENTOS           \n" +
@@ -25,7 +26,7 @@ public class SubPantallasMovimientosConsultas {
                         "\n"+
                         ""+listado+"\n"+
                         "\n"+
-                        "Saldo de la  "+ctaBancaria.getTipoCuentaBancaria()+" N°"+ctaBancaria.getNumCta()+" $"+ctaBancaria.getSaldo()
+                        "Saldo de la  "+ctaBancaria.getTipoCuentaBancaria()+" N°"+ctaBancaria.getNumCta()+" $"+df.format(ctaBancaria.getSaldo())
                 ,"MOVIMIENTOS/CONSULTAS",1);
         pantallaMovCon.pantallaSubMenuMovconsultas(ctaBancaria);
     }
