@@ -27,20 +27,15 @@ public class PruebaCajeroAutomatico {
     private static Movimiento movimiento2 = new Movimiento("DEPOSITO",new Date(),3500.50);
 
     public static void main(String[] args) {
+        ctaBancaria.setMovimiento(movimiento);
+        ctaBancaria.setMovimiento(movimiento2);
         Integer response= menuPantallaPrincipalUI.pantallaPrincipalOpciones();
-        List<Movimiento> movimientos= new ArrayList<>();
-        movimientos.add(movimiento);
-        movimientos.add(movimiento2);
-        ctaBancaria.setMovimientos(movimientos);
-        for(Movimiento mov:movimientos) {
-            ctaBancaria.actualizaSaldoCta(mov);
-        }
         opcionSeleccion(response!=null?response:0);
     }
     public static void opcionSeleccion(int opcion) {
         Validaciones validaciones = new Validaciones();
         SubMenuPantallaMovCons pantallaMovCons = new SubMenuPantallaMovCons();
-        while (validaciones.validaIngMenuPrin(opcion)) {
+        while (validaciones.validaIngMenuPrin(opcion,6)) {
            switch(opcion) {
                case 1:
                    break;
@@ -54,8 +49,14 @@ public class PruebaCajeroAutomatico {
                break;
                case 0: JOptionPane.showMessageDialog(null,"ADIOS GRACIAS POR USAR NUESTROS SERVICIOS");
                return;
-           }    
+               default:
+                   JOptionPane.showMessageDialog(null,"Ingreso Erroneo");
+                   opcion=menuPantallaPrincipalUI.pantallaPrincipalOpciones();
+                   opcionSeleccion(opcion);
+               break;
+           }
             opcion = menuPantallaPrincipalUI.pantallaPrincipalOpciones();
+           opcionSeleccion(opcion);
         }
     }
 

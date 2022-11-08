@@ -9,17 +9,17 @@ import javax.swing.*;
 public class MenuPantallaPrincipalUI {
 
     public Integer pantallaPrincipalOpciones(){
-        String response=(JOptionPane.showInputDialog(null,"                   SELECCIONE EL TIPO DE               \n" +
-                "           OPERACION QUE DESEA EFECTUAR              \n" +
-                "\n" +
-                "1<-TRANSFERENCIAS       EXTRACCIONES/    \n" +
-                "                                                 DEPOSITOS-------->2\n" +
-                "\n" +
-                "3<------PRESTAMOS       PAGOS/RECARGAS-->4\n" +
-                "\n" +
-                "           CONSULTAS/                                 \n" +
-                "5<----MOVIMIENTOS                   SALIR----------->0","CAJERO AUTOMATICO CDT",1));
-       Integer responseToInt= response!=null?Integer.parseInt(response):null;
+        Integer responseToInt=null;
+        String response=(JOptionPane.showInputDialog(null, new StringBuilder()
+                .append("                   SELECCIONE EL TIPO DE               \n")
+                .append("           OPERACION QUE DESEA EFECTUAR              \n")
+                .append("\n").append("1<-TRANSFERENCIAS       EXTRACCIONES/    \n")
+                .append("                                                 DEPOSITOS-------->2\n")
+                .append("\n").append("3<------PRESTAMOS       PAGOS/RECARGAS-->4\n")
+                .append("\n").append("           CONSULTAS/                                 \n")
+                .append("5<----MOVIMIENTOS                   SALIR----------->0")
+                .toString(),"CAJERO AUTOMATICO CDT",1));
+        responseToInt= response!=null?Integer.parseInt(response):null;
        return responseToInt;
     }
 }

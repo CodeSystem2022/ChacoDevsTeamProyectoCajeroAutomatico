@@ -9,21 +9,21 @@ import javax.swing.*;
 public class SubMenuPantallaMovCons {
 
     public void pantallaSubMenuMovconsultas(CtaBancaria ctaBancaria){
-        int opcion= Integer.parseInt(JOptionPane.showInputDialog("                   SELECCIONE EL TIPO DE               \n" +
-                "           OPERACION QUE DESEA EFECTUAR              \n" +
-                "\n" +
-                "         CONSULTA DE      TIPO DE    \n" +
-                "1<--------SALDOS          CAMBIO------------>2\n" +
-                "\n" +
-                "3<--CONSULTA CBU      ULTIMOS\n" +
-                "                                           MOVIMIENTOS------->4\n" +
-                "0<--------VOLVER                                  "));
+        int opcion= Integer.parseInt(JOptionPane.showInputDialog(new StringBuilder()
+                .append("                   SELECCIONE EL TIPO DE               \n")
+                .append("           OPERACION QUE DESEA EFECTUAR              \n")
+                .append("\n").append("         CONSULTA DE      TIPO DE    \n")
+                .append("1<--------SALDOS          CAMBIO------------>2\n")
+                .append("\n").append("3<--CONSULTA CBU      ULTIMOS\n")
+                .append("                                           MOVIMIENTOS------->4\n")
+                .append("0<--------VOLVER                                  ")
+                .toString()));
         opcionSeleccion(opcion,ctaBancaria);
     }
     public void opcionSeleccion(int opcion, CtaBancaria ctaBancaria) {
         SubPantallasMovimientosConsultas subPantallasMovimientosConsultas = new SubPantallasMovimientosConsultas();
         Validaciones validaciones = new Validaciones();
-        while (validaciones.validaIngMenuPrin(opcion)) {
+        while (validaciones.validaIngMenuPrin(opcion,5)) {
             switch(opcion) {
                 case 1:
                     subPantallasMovimientosConsultas.mostrarSaldo(ctaBancaria);
