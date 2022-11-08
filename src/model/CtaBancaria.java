@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CtaBancaria {
@@ -45,6 +46,15 @@ public class CtaBancaria {
 
     public void setMovimientos(List<Movimiento> movimientos) {
         this.movimientos = movimientos;
+    }
+
+    public void setMovimiento(Movimiento movimiento){
+        List<Movimiento> movimientoList = new ArrayList<>();
+        movimientoList.add(movimiento);
+        if(this.getMovimientos()!=null)
+            this.getMovimientos().add(movimiento);
+        else
+            this.setMovimientos(movimientoList);
     }
 
     public Persona getPersona() {

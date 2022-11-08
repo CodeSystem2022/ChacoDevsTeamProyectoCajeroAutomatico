@@ -9,6 +9,7 @@ import javax.swing.*;
 public class MenuPantallaPrincipalUI {
 
     public Integer pantallaPrincipalOpciones(){
+        Integer responseToInt=null;
         String response=(JOptionPane.showInputDialog(null, new StringBuilder()
                 .append("                   SELECCIONE EL TIPO DE               \n")
                 .append("           OPERACION QUE DESEA EFECTUAR              \n")
@@ -18,7 +19,7 @@ public class MenuPantallaPrincipalUI {
                 .append("\n").append("           CONSULTAS/                                 \n")
                 .append("5<----MOVIMIENTOS                   SALIR----------->0")
                 .toString(),"CAJERO AUTOMATICO CDT",1));
-        Integer responseToInt= response!=null?Integer.parseInt(response):null;
+        responseToInt= response!=null?Integer.parseInt(response):null;
        return responseToInt;
     }
 }
