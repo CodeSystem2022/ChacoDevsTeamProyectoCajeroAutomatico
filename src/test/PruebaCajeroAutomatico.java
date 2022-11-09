@@ -8,6 +8,7 @@ import model.Persona;
 import ui.*;
 import ui.prestamos.DestinoPrestamoSubPantalla;
 import ui.transferencia.SubPantallaTransferencias;
+import ui.prestamos.PantallaCuota;
 import ui.prestamos.SubPantallaPrestamos;
 
 
@@ -35,11 +36,11 @@ public class PruebaCajeroAutomatico {
     public static void opcionSeleccion(int opcion) {
         Validaciones validaciones = new Validaciones();
         SubMenuPantallaMovCons pantallaMovCons = new SubMenuPantallaMovCons();
-        while (validaciones.validaIngMenuPrin(opcion,6)) {
+        DepositoExtracciones depositoExtracciones = new DepositoExtracciones();
            switch(opcion) {
                case 1:
                    break;
-               case 2:
+               case 2:depositoExtracciones.menuDepoExtrac(ctaBancaria);
                    break;
                case 3:PantallaSubMenuPrestamos.generarPantallaPrestamos(ctaBancaria);
                    break;
@@ -55,9 +56,7 @@ public class PruebaCajeroAutomatico {
                    opcionSeleccion(opcion);
                break;
            }
-            opcion = menuPantallaPrincipalUI.pantallaPrincipalOpciones();
+           opcion = menuPantallaPrincipalUI.pantallaPrincipalOpciones();
            opcionSeleccion(opcion);
         }
     }
-
-}
