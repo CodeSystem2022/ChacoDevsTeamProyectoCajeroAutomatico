@@ -6,12 +6,18 @@ import model.CtaBancaria;
 
 public class SubPantallaTransferencias {
 
-    public static void transferencias(CtaBancaria ctaBancaria){
-        int OpcionTransferencia = Integer.parseInt(JOptionPane.showInputDialog( "                  TRANSFERENCIAS/DEPOSITOS                   \n " +
+    public void transferencias(CtaBancaria ctaBancaria){
+        int opcionTransferencia = Integer.parseInt(JOptionPane.showInputDialog( "                  TRANSFERENCIAS/DEPOSITOS                   \n " +
                             "\n"+
                             "1-" + ctaBancaria.getTipoCuentaBancaria() +" N°: " + ctaBancaria.getNumCta() + "\n" +
-                            "2-VOLVER"
+                            "0-VOLVER"
 
         ));
+
+    SubMenuTransferencias subMenuTranferencias = new SubMenuTransferencias();
+    if (opcionTransferencia == 1)
+    subMenuTranferencias.pantallaSubmenuTranferencia(ctaBancaria);
+        else if (opcionTransferencia > 1 || opcionTransferencia<0)
+        JOptionPane.showMessageDialog(null, "Ingreso erroneo");
     }
 }
