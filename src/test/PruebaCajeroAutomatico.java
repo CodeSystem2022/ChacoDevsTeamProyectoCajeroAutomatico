@@ -38,7 +38,7 @@ public class PruebaCajeroAutomatico {
         SubMenuPantallaMovCons pantallaMovCons = new SubMenuPantallaMovCons();
         DepositoExtracciones depositoExtracciones = new DepositoExtracciones();
            switch(opcion) {
-               case 1:
+               case 1: 
                    break;
                case 2:depositoExtracciones.menuDepoExtrac(ctaBancaria);
                    break;
