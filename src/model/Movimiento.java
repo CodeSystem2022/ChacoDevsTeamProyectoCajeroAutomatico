@@ -39,4 +39,14 @@ public class Movimiento {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Movimiento{");
+        sb.append("tipoOperacion='").append(tipoOperacion).append('\'');
+        sb.append(", montoOperacion=").append(montoOperacion);
+        sb.append(", fecha=").append(fecha);
+        sb.append('}');
+        return sb.toString();
+    }
 }
