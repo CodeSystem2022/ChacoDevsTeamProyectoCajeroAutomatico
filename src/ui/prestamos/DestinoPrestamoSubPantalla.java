@@ -1,12 +1,10 @@
 package ui.prestamos;
 
-import model.CtaBancaria;
-
 import javax.swing.JOptionPane;
-import components.Validaciones;
+import model.Movimiento;
 
 public class DestinoPrestamoSubPantalla {
-    public static String destinoPrestamo(CtaBancaria ctaBancaria){
+    public static void destinoPrestamo(Movimiento movimiento){
         String respuesta;
         boolean error = false;
         do{
@@ -68,8 +66,6 @@ public class DestinoPrestamoSubPantalla {
                 respuesta = "REFINANCIACIÓN/CANCEL PASIVOS";
                 break;
         }
-        // La linea de abajo era para probar el retorno del string
-        //JOptionPane.showMessageDialog(null, "su respuesta ha sido "+respuesta);
-        return respuesta;
+
     }
 }

@@ -84,7 +84,7 @@ public class PantallaCuota {
                 break;
         }
 
-        DestinoPrestamoSubPantalla.destinoPrestamo(ctaBancaria);
+        DestinoPrestamoSubPantalla.destinoPrestamo(movimiento);
 
     }
     
