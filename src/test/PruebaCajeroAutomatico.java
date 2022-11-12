@@ -35,6 +35,7 @@ public class PruebaCajeroAutomatico {
     }
     public static void opcionSeleccion(int opcion) {
         Validaciones validaciones = new Validaciones();
+        SubMenuPantallaPR subMenuPantallaPR = new SubMenuPantallaPR();
         SubMenuPantallaMovCons pantallaMovCons = new SubMenuPantallaMovCons(); {
            switch(opcion) {
                case 1:
@@ -43,7 +44,7 @@ public class PruebaCajeroAutomatico {
                    break;
                case 3:PantallaSubMenuPrestamos.generarPantallaPrestamos(ctaBancaria);
                    break;
-               case 4:
+               case 4:subMenuPantallaPR.pantallaSubMenuPagosRecargas(ctaBancaria);
                    break;
                case 5:pantallaMovCons.pantallaSubMenuMovconsultas(ctaBancaria);
                break;
