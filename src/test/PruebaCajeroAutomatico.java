@@ -7,6 +7,7 @@ import model.Movimiento;
 import model.Persona;
 import ui.*;
 import ui.prestamos.DestinoPrestamoSubPantalla;
+import ui.transferencia.MenuTransferencia;
 import ui.transferencia.SubPantallaTransferencias;
 import ui.prestamos.PantallaCuota;
 import ui.prestamos.SubPantallaPrestamos;
@@ -37,8 +38,9 @@ public class PruebaCajeroAutomatico {
         Validaciones validaciones = new Validaciones();
         SubMenuPantallaMovCons pantallaMovCons = new SubMenuPantallaMovCons();
         DepositoExtracciones depositoExtracciones = new DepositoExtracciones();
+        MenuTransferencia transferenciass = new MenuTransferencia();
            switch(opcion) {
-               case 1: 
+               case 1: transferenciass.pantallaSubMenuMovconsultas(ctaBancaria);
                    break;
                case 2:depositoExtracciones.menuDepoExtrac(ctaBancaria);
                    break;
