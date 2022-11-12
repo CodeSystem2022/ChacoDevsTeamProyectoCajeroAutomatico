@@ -1,5 +1,11 @@
 package ui.pagosyrecargas;
 
+import model.CtaBancaria;
+
+import javax.swing.*;
+
+import static ui.PantallaSubMenuPrestamos.opcionSeleccion;
+
 public class SubPantallaRecarga {
     public void pantallasubmenurecargas(CtaBancaria ctaBancaria){
         int opcion= Integer.parseInt(JOptionPane.showInputDialog(new StringBuilder()
@@ -19,7 +25,7 @@ public class SubPantallaRecarga {
                 .append("01-PERSONAL                                               \n")
                 .append("02-CLARO                                                  \n")
                 .append("03-MOVISTAR                                               \n")
-                .append("00-VOLVER                                                 \n")
+                .append("00-VOLVER                                                 \n")));
         opcionSeleccion(opcion,ctaBancaria);
     }  
 }
