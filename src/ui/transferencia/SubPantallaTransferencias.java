@@ -2,7 +2,9 @@ package ui.transferencia;
 
 import javax.swing.JOptionPane;
 
+import components.Validaciones;
 import model.CtaBancaria;
+import ui.movimientosConsultas.SubPantallasMovimientosConsultas;
 
 public class SubPantallaTransferencias {
 
@@ -20,4 +22,5 @@ public class SubPantallaTransferencias {
         else if (opcionTransferencia > 1 || opcionTransferencia<0)
         JOptionPane.showMessageDialog(null, "Ingreso erroneo");
     }
+
 }
