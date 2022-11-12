@@ -20,15 +20,15 @@ public class MenuTransferencia {
 
     public void opcionSeleccion(int opcion, CtaBancaria ctaBancaria) {
         SubPantallaTransferencias subPantallaTranferencias = new SubPantallaTransferencias();
-        Validaciones validaciones = new Validaciones();
-        while (validaciones.validaIngMenuPrin(opcion, 5)) {
-            switch (opcion) {
-                case 1:
-                    subPantallaTranferencias.transferencias(ctaBancaria);
-                    break;
-                case 0:
-                    break;
-            }
+        switch (opcion) {
+            case 1:
+                subPantallaTranferencias.transferencias(ctaBancaria);
+                break;
+            case 0:
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "Ingreso erroneo");
+                break;
+        }
         }
     }
-}
