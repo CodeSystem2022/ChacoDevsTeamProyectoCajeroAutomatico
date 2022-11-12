@@ -35,12 +35,17 @@ public class PruebaCajeroAutomatico {
     }
     public static void opcionSeleccion(int opcion) {
         Validaciones validaciones = new Validaciones();
+<<<<<<< HEAD
         SubMenuPantallaPR subMenuPantallaPR = new SubMenuPantallaPR();
         SubMenuPantallaMovCons pantallaMovCons = new SubMenuPantallaMovCons(); {
+=======
+        SubMenuPantallaMovCons pantallaMovCons = new SubMenuPantallaMovCons();
+        DepositoExtracciones depositoExtracciones = new DepositoExtracciones();
+>>>>>>> develop
            switch(opcion) {
-               case 1:
+               case 1: 
                    break;
-               case 2:
+               case 2:depositoExtracciones.menuDepoExtrac(ctaBancaria);
                    break;
                case 3:PantallaSubMenuPrestamos.generarPantallaPrestamos(ctaBancaria);
                    break;
@@ -60,5 +65,3 @@ public class PruebaCajeroAutomatico {
            opcionSeleccion(opcion);
         }
     }
-
-}

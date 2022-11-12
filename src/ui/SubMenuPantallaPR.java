@@ -1,5 +1,9 @@
 package ui;
-import model.*;
+import javax.swing.JOptionPane;
+
+import components.Validaciones;
+import model.CtaBancaria;
+import ui.movimientosConsultas.SubPantallasMovimientosConsultas;
 public class SubMenuPantallaPR {
   
     public void pantallaSubMenuPagosRecargas(CtaBancaria ctaBancaria){
