@@ -64,4 +64,5 @@ Listado de Integrantes
 10. Valdez, Carlos Federico DNI: 40605106 correo: cvaldes250@gmail.com
 
 
-![Modelado de clases](https://user-images.githubusercontent.com/70241433/197436731-58a86f52-a979-4269-983d-f8e7e18b5288.png)
+
+![Modelado Clases](https://user-images.githubusercontent.com/70241433/201673410-9623a897-3f9e-4b70-a9c3-3b2459268cc8.png)
