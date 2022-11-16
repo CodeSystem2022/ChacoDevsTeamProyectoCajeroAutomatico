@@ -3,10 +3,6 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JOptionPane;
-
-import ui.prestamos.PantallaCuota;
-
 public class CtaBancaria {
     private Persona persona;
     private int numCta;
@@ -14,6 +10,7 @@ public class CtaBancaria {
     private String tipoCuentaBancaria;
     private List<Movimiento> movimientos;
     private String CBU;
+    private User user;
 
     public CtaBancaria() {
         armarCBU();
@@ -25,6 +22,7 @@ public class CtaBancaria {
         this.saldo = saldo;
         this.tipoCuentaBancaria = tipoCuentaBancaria;
         armarCBU();
+        crearUsuarioAdmin();
     }
 
     public CtaBancaria(Persona persona, int numCta, double saldo, String tipoCuentaBancaria, List<Movimiento> movimientos) {
@@ -34,6 +32,15 @@ public class CtaBancaria {
         this.tipoCuentaBancaria = tipoCuentaBancaria;
         this.movimientos = movimientos;
         armarCBU();
+        crearUsuarioAdmin();
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User usario) {
+        this.user = usario;
     }
 
     public String getCBU() {
@@ -122,5 +129,9 @@ public class CtaBancaria {
             restaSaldo(movimiento.getMontoOperacion());
         }else
             sumaSaldo(movimiento.getMontoOperacion());
+    }
+
+    public void crearUsuarioAdmin(){
+        this.setUser(new User("ADMIN","1234"));
     }
 }
