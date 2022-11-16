@@ -1,22 +1,12 @@
 package test;
-import components.Validaciones;
-
 import model.CtaBancaria;
 import model.Domicilio;
 import model.Movimiento;
 import model.Persona;
 import ui.*;
-import ui.prestamos.DestinoPrestamoSubPantalla;
 import ui.transferencia.MenuTransferencia;
-import ui.transferencia.SubPantallaTransferencias;
-import ui.prestamos.PantallaCuota;
-import ui.prestamos.SubPantallaPrestamos;
-
-
 import javax.swing.*;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class PruebaCajeroAutomatico {
 
@@ -31,12 +21,15 @@ public class PruebaCajeroAutomatico {
     public static void main(String[] args) {
         ctaBancaria.guardarValidarMovimiento(movimiento);
         ctaBancaria.guardarValidarMovimiento(movimiento2);
-        Integer response= menuPantallaPrincipalUI.pantallaPrincipalOpciones();
-        opcionSeleccion(response!=null?response:0);
+        PantallaLogin pantallaLogin = new PantallaLogin();
+        boolean bandera=false;
+        do{
+            bandera=pantallaLogin.login(ctaBancaria);
+        }while(!bandera);
+        Integer response = menuPantallaPrincipalUI.pantallaPrincipalOpciones();
+        opcionSeleccion(response != null ? response : 0);
     }
     public static void opcionSeleccion(int opcion) {
-        Validaciones validaciones = new Validaciones();
-
         SubMenuPantallaMovCons pantallaMovCons = new SubMenuPantallaMovCons();
         DepositoExtracciones depositoExtracciones = new DepositoExtracciones();
         MenuTransferencia transferencias = new MenuTransferencia();

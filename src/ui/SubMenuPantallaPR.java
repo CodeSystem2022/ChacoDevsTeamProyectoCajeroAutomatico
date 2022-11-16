@@ -3,18 +3,19 @@ import javax.swing.JOptionPane;
 
 import components.Validaciones;
 import model.CtaBancaria;
+import model.TitulosPantallas;
 import ui.pagosyrecargas.SubPantallaPagos;
 public class SubMenuPantallaPR {
   
     public void pantallaSubMenuPagosRecargas(CtaBancaria ctaBancaria){
-        int opcion= Integer.parseInt(JOptionPane.showInputDialog(new StringBuilder()
+        int opcion= Integer.parseInt(JOptionPane.showInputDialog(null,new StringBuilder()
                 .append("                   SELECCIONE EL TIPO DE                  \n")
                 .append("           OPERACION QUE DESEA EFECTUAR                   \n")
                 .append("                                                          \n")
                 .append("1<---- PAGOS                        RECARGAS------------>2\n")
                 .append("                                                          \n")
                 .append("0<---- VOLVER                                             \n")                            
-                .toString()));
+                .toString(), TitulosPantallas.TITULOPAGOSRECARGAS.descripcion,1));
         opcionSeleccion(opcion,ctaBancaria);
     }
 

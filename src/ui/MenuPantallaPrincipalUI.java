@@ -3,6 +3,7 @@ package ui;
 import model.CtaBancaria;
 import model.Domicilio;
 import model.Persona;
+import model.TitulosPantallas;
 
 import javax.swing.*;
 
@@ -18,7 +19,7 @@ public class MenuPantallaPrincipalUI {
                 .append("\n").append("3<------PRESTAMOS       PAGOS/RECARGAS-->4\n")
                 .append("\n").append("           CONSULTAS/                                 \n")
                 .append("5<----MOVIMIENTOS                   SALIR----------->0")
-                .toString(),"CAJERO AUTOMATICO CDT",1));
+                .toString(), TitulosPantallas.TITULOCAJERO.descripcion,1));
         responseToInt= response!=null?Integer.parseInt(response):null;
        return responseToInt;
     }
