@@ -1,6 +1,7 @@
 package ui;
 
 import model.CtaBancaria;
+import model.TitulosPantallas;
 import ui.prestamos.SubPantallaPrestamos;
 
 import javax.swing.*;
@@ -10,7 +11,7 @@ import static test.PruebaCajeroAutomatico.menuPantallaPrincipalUI;
 public class PantallaSubMenuPrestamos {
 
     public static void generarPantallaPrestamos(CtaBancaria ctaBancaria){
-        int opcion = Integer.parseInt(JOptionPane.showInputDialog(
+        int opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
                 new StringBuilder().append("                   SOLICITUD DE PRESTAMOS               \n")
                         .append("               \n")
                         .append("             POR FAVOR SELECCIONE EL TIPO DE               \n")
@@ -20,7 +21,7 @@ public class PantallaSubMenuPrestamos {
                         .append("               \n")
                         .append("01<----SOLICITUD DE PRESTAMOS               \n")
                         .append("00<--------------------VOLVER               \n")
-                        .toString()));
+                        .toString(), TitulosPantallas.TITULOPRESTAMOS.descripcion,1));
         opcionSeleccion(opcion, ctaBancaria);
     }
 
