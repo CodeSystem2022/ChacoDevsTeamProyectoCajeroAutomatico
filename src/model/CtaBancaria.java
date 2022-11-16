@@ -3,6 +3,8 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import ui.prestamos.PantallaCuota;
 
 public class CtaBancaria {
@@ -50,14 +52,19 @@ public class CtaBancaria {
         this.movimientos = movimientos;
     }
 
-    public void setMovimiento(Movimiento movimiento){
+    public boolean guardarValidarMovimiento(Movimiento movimiento){
         List<Movimiento> movimientoList = new ArrayList<>();
+        if (this.validarSaldo(movimiento.getMontoOperacion()))
+        {
         movimientoList.add(movimiento);
         if(this.getMovimientos()!=null)
             this.getMovimientos().add(movimiento);
         else
             this.setMovimientos(movimientoList);
         this.actualizaSaldoCta(movimiento);
+        return true;
+        }
+        else return false;
     }
 
     public Persona getPersona() {
@@ -102,7 +109,7 @@ public class CtaBancaria {
     }
 
     public boolean validarSaldo(double montoOperacion){
-        return this.getSaldo() - montoOperacion > 0;
+        return this.getSaldo() + montoOperacion > 0;
     }
 
     public void restaSaldo( double montoOperacion){
