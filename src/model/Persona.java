@@ -4,9 +4,9 @@ public class Persona {
     private String nombre;
     private String apellido;
     private Domicilio domicilio;
-    private String dni;
+    private Long dni;
 
-    public Persona(String nombre, String apellido, Domicilio domicilio, String dni) {
+    public Persona(String nombre, String apellido, Domicilio domicilio, Long dni) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.domicilio = domicilio;
@@ -40,11 +40,11 @@ public class Persona {
         this.domicilio = domicilio;
     }
 
-    public String getDni() {
+    public Long getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
+    public void setDni(Long dni) {
         this.dni = dni;
     }
 }

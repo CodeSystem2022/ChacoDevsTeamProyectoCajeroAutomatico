@@ -16,18 +16,21 @@ public class SubPantallasMovimientosConsultas {
         int cont=1;
         String listado=new String();
         DecimalFormat df = new DecimalFormat("0.00");
-        for(Movimiento movimiento: ctaBancaria.getMovimientos()){
-            listado+="\nN°:"+cont+" - FECHA: "+movimiento.getFecha().toInstant().toString() +" - CONCEPTO: "+movimiento.getTipoOperacion()+ " $ "+df.format(movimiento.getMontoOperacion())+"";
-            cont+=1;}
+        if(ctaBancaria.getMovimientos()!=null) {
+            for (Movimiento movimiento : ctaBancaria.getMovimientos()) {
+                listado += "\nN°:" + cont + " - FECHA: " + movimiento.getFecha().toInstant().toString() + " - CONCEPTO: " + movimiento.getTipoOperacion() + " $ " + df.format(movimiento.getMontoOperacion()) + "";
+                cont += 1;
+            }
+        }
+            JOptionPane.showMessageDialog(null, "                                  ULTIMOS MOVIMIENTOS           \n" +
+                            "\n" +
+                            "" + ctaBancaria.getTipoCuentaBancaria() + " N°" + ctaBancaria.getNumCta() + "\n" +
+                            "\n" +
+                            "" + (listado!=null?listado:"NO EXISTEN MOVIMIENTOS") + "\n" +
+                            "\n" +
+                            "Saldo de la  " + ctaBancaria.getTipoCuentaBancaria() + " N°" + ctaBancaria.getNumCta() + " $" + df.format(ctaBancaria.getSaldo())
+                    , "MOVIMIENTOS/CONSULTAS", 1);
 
-        JOptionPane.showMessageDialog(null,"                                  ULTIMOS MOVIMIENTOS           \n" +
-                        "\n" +
-                        ""+ctaBancaria.getTipoCuentaBancaria()+" N°"+ctaBancaria.getNumCta()+"\n"+
-                        "\n"+
-                        ""+listado+"\n"+
-                        "\n"+
-                        "Saldo de la  "+ctaBancaria.getTipoCuentaBancaria()+" N°"+ctaBancaria.getNumCta()+" $"+df.format(ctaBancaria.getSaldo())
-                ,"MOVIMIENTOS/CONSULTAS",1);
         pantallaMovCon.pantallaSubMenuMovconsultas(ctaBancaria);
     }
 
