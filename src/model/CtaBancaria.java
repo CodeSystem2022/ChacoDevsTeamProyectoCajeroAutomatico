@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CtaBancaria {
+    private static final int NRO_CTA_BANCARIA=(int) (Math.random() * (999999 - 100000)) + 100000 ;
     private Persona persona;
     private int numCta;
     private double saldo;
@@ -18,7 +19,15 @@ public class CtaBancaria {
 
     public CtaBancaria(Persona persona, int numCta, double saldo, String tipoCuentaBancaria) {
         this.persona = persona;
-        this.numCta = numCta;
+        this.numCta = NRO_CTA_BANCARIA;
+        this.saldo = saldo;
+        this.tipoCuentaBancaria = tipoCuentaBancaria;
+        armarCBU();
+        crearUsuarioAdmin();
+    }
+
+    public CtaBancaria(double saldo, String tipoCuentaBancaria) {
+        this.numCta = NRO_CTA_BANCARIA;
         this.saldo = saldo;
         this.tipoCuentaBancaria = tipoCuentaBancaria;
         armarCBU();
@@ -27,7 +36,7 @@ public class CtaBancaria {
 
     public CtaBancaria(Persona persona, int numCta, double saldo, String tipoCuentaBancaria, List<Movimiento> movimientos) {
         this.persona = persona;
-        this.numCta = numCta;
+        this.numCta = NRO_CTA_BANCARIA;
         this.saldo = saldo;
         this.tipoCuentaBancaria = tipoCuentaBancaria;
         this.movimientos = movimientos;
@@ -60,18 +69,18 @@ public class CtaBancaria {
     }
 
     public boolean guardarValidarMovimiento(Movimiento movimiento){
-        List<Movimiento> movimientoList = new ArrayList<>();
-        if (this.validarSaldo(movimiento.getMontoOperacion()))
-        {
-        movimientoList.add(movimiento);
-        if(this.getMovimientos()!=null)
-            this.getMovimientos().add(movimiento);
-        else
-            this.setMovimientos(movimientoList);
-        this.actualizaSaldoCta(movimiento);
-        return true;
-        }
-        else return false;
+        if(movimiento!=null){
+            List<Movimiento> movimientoList = new ArrayList<>();
+            if (this.validarSaldo(movimiento.getMontoOperacion())) {
+                movimientoList.add(movimiento);
+                if (this.getMovimientos() != null)
+                    this.getMovimientos().add(movimiento);
+                else
+                    this.setMovimientos(movimientoList);
+                this.actualizaSaldoCta(movimiento);
+                return true;
+            } else return false;
+        }else return false;
     }
 
     public Persona getPersona() {

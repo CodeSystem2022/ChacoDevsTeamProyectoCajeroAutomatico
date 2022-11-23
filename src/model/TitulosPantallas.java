@@ -10,6 +10,7 @@ public enum TitulosPantallas {
     TITULOPAGOS("PAGOS"),
     TITULORECARGA("RECARGAS"),
     TITULODEPTRANS("DEPOSITOS/TRANSFERENCIAS"),
+    TITULODATOSPERSONALES("DATOS PERSONALES"),
     TITULOERROR("ERROR");
 
     public final String descripcion;

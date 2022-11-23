@@ -1,6 +1,7 @@
 package ui;
 
 import model.CtaBancaria;
+import model.Persona;
 import model.User;
 
 import javax.swing.*;
@@ -38,7 +39,9 @@ public class PantallaLogin {
             if ((userInput.toUpperCase().equalsIgnoreCase("Admin") && passInput.equalsIgnoreCase("1234"))||
                     (userInput.toUpperCase().equalsIgnoreCase(ctaBancaria.getUser().getUsuario())&&
                             passInput.toUpperCase().equalsIgnoreCase(ctaBancaria.getUser().getContraseña()))) {
-                JOptionPane.showMessageDialog(null, "BIENVENIDO "+ctaBancaria.getPersona().getNombre()+","+ctaBancaria.getPersona().getApellido(),TitulosPantallas.TITULOLOGIN.descripcion, JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "BIENVENIDO "+(ctaBancaria.getPersona()!=null?
+                        ctaBancaria.getPersona().getNombre():ctaBancaria.getUser()!=null?ctaBancaria.getUser().getUsuario():"Invitado"),
+                        TitulosPantallas.TITULOLOGIN.descripcion, JOptionPane.INFORMATION_MESSAGE);
                 return true;
             } else {
                 String opcion = JOptionPane.showInputDialog(null,

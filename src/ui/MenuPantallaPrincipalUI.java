@@ -17,8 +17,10 @@ public class MenuPantallaPrincipalUI {
                 .append("\n").append("1<-TRANSFERENCIAS       EXTRACCIONES/    \n")
                 .append("                                                 DEPOSITOS-------->2\n")
                 .append("\n").append("3<------PRESTAMOS       PAGOS/RECARGAS-->4\n")
-                .append("\n").append("           CONSULTAS/                                 \n")
-                .append("5<----MOVIMIENTOS                   SALIR----------->0")
+                .append("\n").append("           CONSULTAS/         EDITAR DATOS\n")
+                .append("5<----MOVIMIENTOS       PERSONALES---------->6\n")
+                .append("\n")
+                .append("0<----SALIR ")
                 .toString(), TitulosPantallas.TITULOCAJERO.descripcion,1));
         responseToInt= response!=null?Integer.parseInt(response):null;
        return responseToInt;
