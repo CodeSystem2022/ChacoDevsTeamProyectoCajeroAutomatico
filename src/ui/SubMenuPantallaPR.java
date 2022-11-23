@@ -5,6 +5,7 @@ import components.Validaciones;
 import model.CtaBancaria;
 import model.TitulosPantallas;
 import ui.pagosyrecargas.SubPantallaPagos;
+import ui.pagosyrecargas.SubPantallaRecarga;
 public class SubMenuPantallaPR {
   
     public void pantallaSubMenuPagosRecargas(CtaBancaria ctaBancaria){
@@ -21,6 +22,7 @@ public class SubMenuPantallaPR {
 
   
     public void opcionSeleccion(int opcion, CtaBancaria ctaBancaria) {
+        SubPantallaRecarga subPantallaRecarga = new SubPantallaRecarga();
         SubPantallaPagos subpantallaPagos = new SubPantallaPagos();
         Validaciones validaciones = new Validaciones();
         while (validaciones.validaIngMenuPrin(opcion,5)) {
@@ -29,6 +31,7 @@ public class SubMenuPantallaPR {
                     subpantallaPagos.pantallaSubMenuPagos(ctaBancaria);
                     break;
                 case 2: 
+                    subPantallaRecarga.pantallasubmenurecargas(ctaBancaria);
                     break;
                 case 0:
                     break;
