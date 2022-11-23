@@ -1,6 +1,7 @@
 package ui.pagosyrecargas;
 
 import model.CtaBancaria;
+import model.TitulosPantallas;
 import ui.prestamos.PantallaCuota;
 
 import javax.swing.*;
@@ -42,7 +43,7 @@ public class SubPantallaPagos {
 
                 break;
             default:
-                JOptionPane.showMessageDialog(null, "INGRESO ERRONEO");
+                JOptionPane.showMessageDialog(null, "INGRESO ERRONEO", TitulosPantallas.TITULOPAGOS.descripcion,JOptionPane.ERROR_MESSAGE);
                 break;
         }
 

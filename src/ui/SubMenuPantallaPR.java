@@ -31,7 +31,7 @@ public class SubMenuPantallaPR {
                     subpantallaPagos.pantallaSubMenuPagos(ctaBancaria);
                     break;
                 case 2: 
-                    subPantallaRecarga.pantallasubmenurecargas(ctaBancaria);
+                    subPantallaRecarga.pantallaSubMenuRecargas(ctaBancaria);
                     break;
                 case 0:
                     break;
