@@ -50,32 +50,26 @@ public class PantallaCuota {
             case 1: movimiento.setFecha(new Date());
                     movimiento.setTipoOperacion("PRESTAMO/PLAN CUOTA 1 -"+df.format(monto*1.13));
                     movimiento.setMontoOperacion(monto);
-                    ctaBancaria.guardarValidarMovimiento(movimiento);
                 break;
             case 2: movimiento.setFecha(new Date());
-                    movimiento.setTipoOperacion("PRESTAMO/PLAN CUOTAS 3-"+df.format((monto*1.25)/3));
+                    movimiento.setTipoOperacion("PRESTAMO/PLAN CUOTAS 3 -"+df.format((monto*1.25)/3));
                     movimiento.setMontoOperacion(monto);
-                    ctaBancaria.guardarValidarMovimiento(movimiento); 
                 break;
             case 3: movimiento.setFecha(new Date());
-                    movimiento.setTipoOperacion("PRESTAMO/PLAN CUOTAS 6-"+df.format((monto*1.46)/6));
+                    movimiento.setTipoOperacion("PRESTAMO/PLAN CUOTAS 6 -"+df.format((monto*1.46)/6));
                     movimiento.setMontoOperacion(monto);
-                    ctaBancaria.guardarValidarMovimiento(movimiento);       
                 break;
             case 4: movimiento.setFecha(new Date());
-                    movimiento.setTipoOperacion("PRESTAMO/PLAN CUOTAS 9-"+df.format((monto*1.65)/9));
+                    movimiento.setTipoOperacion("PRESTAMO/PLAN CUOTAS 9 -"+df.format((monto*1.65)/9));
                     movimiento.setMontoOperacion(monto);
-                    ctaBancaria.guardarValidarMovimiento(movimiento);
                 break;
             case 5: movimiento.setFecha(new Date());
-                    movimiento.setTipoOperacion("PRESTAMO/PLAN CUOTA 12-"+df.format((monto*1.81)/12));
+                    movimiento.setTipoOperacion("PRESTAMO/PLAN CUOTA 12 -"+df.format((monto*1.81)/12));
                     movimiento.setMontoOperacion(monto);
-                    ctaBancaria.guardarValidarMovimiento(movimiento);
                 break;
             case 6: movimiento.setFecha(new Date());
                     movimiento.setTipoOperacion("PRESTAMO/PLAN CUOTA 15 -"+df.format((monto*1.99)/15));
                     movimiento.setMontoOperacion(monto);
-                    ctaBancaria.guardarValidarMovimiento(movimiento);
                 break;
             case 0:
             break;
@@ -84,7 +78,7 @@ public class PantallaCuota {
                 break;
         }
 
-        DestinoPrestamoSubPantalla.destinoPrestamo(movimiento);
+        DestinoPrestamoSubPantalla.destinoPrestamo(movimiento, ctaBancaria);
 
     }
     

@@ -1,10 +1,13 @@
 package ui.prestamos;
 
 import javax.swing.JOptionPane;
+
+import model.CtaBancaria;
 import model.Movimiento;
+import model.TitulosPantallas;
 
 public class DestinoPrestamoSubPantalla {
-    public static void destinoPrestamo(Movimiento movimiento){
+    public static void destinoPrestamo(Movimiento movimiento, CtaBancaria ctaBancaria){
         String respuesta;
         boolean error = false;
         do{
@@ -66,6 +69,39 @@ public class DestinoPrestamoSubPantalla {
                 respuesta = "REFINANCIACIÓN/CANCEL PASIVOS";
                 break;
         }
-
+        //escribirlo en su propio metodo luego
+        String mov = movimiento.getTipoOperacion().replace(",", ".");
+        System.out.println(mov);
+        Integer nroCuotas = Integer.parseInt(mov.substring(20,22).trim());
+        String stringMontoCuota = mov.substring(mov.indexOf("-")+1);
+        double montCuota = Double.parseDouble(stringMontoCuota);
+        double montoPrestamo = movimiento.getMontoOperacion();
+        double montoPrestConInteres = montCuota * nroCuotas;
+        double interesDec = (montoPrestConInteres - montoPrestamo)/montoPrestamo;
+        Integer tasaInteres = (int)(interesDec * 100);
+        StringBuilder sb = new StringBuilder();
+        sb.append("                    SOLICITUD DE PRESTAMOS\n")
+                .append("             UD SOLICITA UN PRÉSTAMO DE:\n")
+                .append("                                   $").append(montoPrestamo).append("\n")
+                .append("              DESTINADO PARA: ").append(respuesta).append("\n")
+                .append("        QUE DEBERA CANCELAR EN ").append(nroCuotas).append(" CUOTAS\n")
+                .append("           IMPORTE DE LAS CUOTAS $").append(montCuota).append("\n")
+                .append("                     TASA DE INTERES: ").append(tasaInteres).append("%\n")
+                .append("\n")
+                .append("             VERIFIQUE LAS CONDICIÓNES EN EL\n")
+                .append("           TICKET QUE SE ESTÁ IMPRIMIENDO Y\n")
+                .append("          PRESIONE UNA TECLA PARA CONFIRMAR\n")
+                .append("\n")
+                .append("<01------------SI                                                   NO--------02>");
+        Integer confirm = Integer.parseInt(JOptionPane.showInputDialog(sb));
+        if(confirm == 1){
+            StringBuilder bs = new StringBuilder();
+            bs.append("SE ACREDITARA EN LA CAJA DE AHORRO N° ").append(ctaBancaria.getNumCta()).append("SU PRÉSTAMO DE ").append(movimiento.getMontoOperacion());
+            JOptionPane.showMessageDialog(null, bs);
+            if (ctaBancaria.guardarValidarMovimiento(movimiento))
+                JOptionPane.showMessageDialog(null, "SU PRESTAMO HA SIDO ACREDITADO", TitulosPantallas.TITULOPRESTAMOS.descripcion, JOptionPane.INFORMATION_MESSAGE);
+        }else if(confirm == 2){
+            JOptionPane.showMessageDialog(null, "EL PRÉSTAMO SE HA RECHAZADO");
+        }
     }
 }
