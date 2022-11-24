@@ -1,5 +1,7 @@
 package model;
-
+/*
+ *Clase Persona: esta clase representara los datos necesarios de una persona
+ */
 public class Persona {
     private String nombre;
     private String apellido;

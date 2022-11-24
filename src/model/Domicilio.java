@@ -1,5 +1,9 @@
 package model;
-
+/*
+ *Clase Domicilio
+ * Esta clase cuenta con los sieguientes atributos:
+ * direccion, provincia, localidad: son los datos de la persona vinculada a la cuenta bancaria
+ */
 public class Domicilio {
     private String direccion;
     private String provincia;

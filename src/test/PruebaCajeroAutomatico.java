@@ -12,6 +12,11 @@ public class PruebaCajeroAutomatico {
     private static CtaBancaria ctaBancaria = new CtaBancaria(0,"Caja de Ahorro");
 
     public static void main(String[] args) {
+       init();
+    }
+    //Metodo de inicializacion donde creo la pantalla de loggin y hasta que no se proporcion un valor correspondiente
+    //no prosigue
+    public static void init(){
         PantallaLogin pantallaLogin = new PantallaLogin();
         boolean bandera=false;
         do{
@@ -20,7 +25,7 @@ public class PruebaCajeroAutomatico {
         Integer response = menuPantallaPrincipalUI.pantallaPrincipalOpciones();
         opcionSeleccion(response != null ? response : 0);
     }
-
+    //se crea metodo de seleccion que recibe la opcion proporcionada por el usuario
     public static void opcionSeleccion(int opcion) {
         SubMenuPantallaMovCons pantallaMovCons = new SubMenuPantallaMovCons();
         DepositoExtracciones depositoExtracciones = new DepositoExtracciones();
