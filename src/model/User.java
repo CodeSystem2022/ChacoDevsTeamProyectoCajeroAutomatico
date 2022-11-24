@@ -1,5 +1,8 @@
 package model;
-
+/*
+ * Clase User: esta clase es utiliza para crear los datos que se guardaran para el loggin y esta relacionada
+ * con la cuenta bancaria
+ */
 public class User {
     private String usuario;
     private String contraseña;
