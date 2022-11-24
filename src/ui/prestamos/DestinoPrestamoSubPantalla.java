@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 import model.CtaBancaria;
 import model.Movimiento;
+import model.TitulosPantallas;
 
 public class DestinoPrestamoSubPantalla {
     public static void destinoPrestamo(Movimiento movimiento, CtaBancaria ctaBancaria){
@@ -78,14 +79,6 @@ public class DestinoPrestamoSubPantalla {
         double montoPrestConInteres = montCuota * nroCuotas;
         double interesDec = (montoPrestConInteres - montoPrestamo)/montoPrestamo;
         Integer tasaInteres = (int)(interesDec * 100);
-        //lineas para ver los balores recuperados del string de movimiento.getTipoMovimiento();
-        //System.out.println("el monto de la cuota en string es->"+stringMontoCuota);
-        //System.out.println("el monto de la cuota en double es->"+montCuota);
-        //System.out.println("el monto del prestamo es->"+montoPrestamo);
-        //System.out.println("el monto del prestamo con interes es->"+PantallaCuota.df.format(montoPrestConInteres));
-        //System.out.println("el interes con decimales es->"+interesDec);
-        //System.out.println("el interes sin decimales es->"+tasaInteres);
-        //System.out.println(nroCuotas);
         StringBuilder sb = new StringBuilder();
         sb.append("                    SOLICITUD DE PRESTAMOS\n")
                 .append("             UD SOLICITA UN PRÉSTAMO DE:\n")
@@ -105,7 +98,8 @@ public class DestinoPrestamoSubPantalla {
             StringBuilder bs = new StringBuilder();
             bs.append("SE ACREDITARA EN LA CAJA DE AHORRO N° ").append(ctaBancaria.getNumCta()).append("SU PRÉSTAMO DE ").append(movimiento.getMontoOperacion());
             JOptionPane.showMessageDialog(null, bs);
-            ctaBancaria.guardarValidarMovimiento(movimiento);
+            if (ctaBancaria.guardarValidarMovimiento(movimiento))
+                JOptionPane.showMessageDialog(null, "SU PRESTAMO HA SIDO ACREDITADO", TitulosPantallas.TITULOPRESTAMOS.descripcion, JOptionPane.INFORMATION_MESSAGE);
         }else if(confirm == 2){
             JOptionPane.showMessageDialog(null, "EL PRÉSTAMO SE HA RECHAZADO");
         }
