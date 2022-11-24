@@ -1,5 +1,5 @@
 package model;
-
+//Se creo una Clase Enum donde contenga los diversos titulos de pantallas a utilizarse en el proyecto
 public enum TitulosPantallas {
     TITULOLOGIN("LOGIN"),
     TITULOLOGNUEVACUENTA("LOGIN-NUEVA CUENTA"),
@@ -15,7 +15,7 @@ public enum TitulosPantallas {
 
     public final String descripcion;
 
-    private TitulosPantallas(String descripcion) {
+    TitulosPantallas(String descripcion) {
         this.descripcion = descripcion;
     }
 
