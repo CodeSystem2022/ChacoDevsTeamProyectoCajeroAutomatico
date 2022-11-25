@@ -23,35 +23,32 @@ public class CtaBancaria {
     private String CBU;
     private User user;
 
-    public CtaBancaria() {
+    private CtaBancaria() {
+        crearUsuarioAdmin();
+        this.numCta = NRO_CTA_BANCARIA;
         armarCBU();
     }
 
-    public CtaBancaria(Persona persona, int numCta, double saldo, String tipoCuentaBancaria) {
+    public CtaBancaria(Persona persona, double saldo, String tipoCuentaBancaria) {
+        this();
         this.persona = persona;
-        this.numCta = NRO_CTA_BANCARIA;
         this.saldo = saldo;
         this.tipoCuentaBancaria = tipoCuentaBancaria;
-        armarCBU();
-        crearUsuarioAdmin();
+
     }
 
     public CtaBancaria(double saldo, String tipoCuentaBancaria) {
-        this.numCta = NRO_CTA_BANCARIA;
+        this();
         this.saldo = saldo;
         this.tipoCuentaBancaria = tipoCuentaBancaria;
-        armarCBU();
-        crearUsuarioAdmin();
     }
 
-    public CtaBancaria(Persona persona, int numCta, double saldo, String tipoCuentaBancaria, List<Movimiento> movimientos) {
+    public CtaBancaria(Persona persona, double saldo, String tipoCuentaBancaria, List<Movimiento> movimientos) {
+        this();
         this.persona = persona;
-        this.numCta = NRO_CTA_BANCARIA;
         this.saldo = saldo;
         this.tipoCuentaBancaria = tipoCuentaBancaria;
         this.movimientos = movimientos;
-        armarCBU();
-        crearUsuarioAdmin();
     }
 
     public User getUser() {
@@ -104,10 +101,6 @@ public class CtaBancaria {
 
     public int getNumCta() {
         return numCta;
-    }
-
-    public void setNumCta(int numCta) {
-        this.numCta = numCta;
     }
 
     public double getSaldo() {
