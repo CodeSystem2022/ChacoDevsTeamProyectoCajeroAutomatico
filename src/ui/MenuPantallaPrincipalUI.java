@@ -22,7 +22,7 @@ public class MenuPantallaPrincipalUI {
                 .append("\n")
                 .append("0<----SALIR ")
                 .toString(), TitulosPantallas.TITULOCAJERO.descripcion,1));
-        responseToInt= response!=null?Integer.parseInt(response):null;
+        responseToInt= response!=null?Integer.parseInt(response):0;
        return responseToInt;
     }
 }

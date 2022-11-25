@@ -13,6 +13,7 @@ public class PruebaCajeroAutomatico {
 
     public static void main(String[] args) {
        init();
+       System.exit(0);
     }
     //Metodo de inicializacion donde creo la pantalla de loggin y hasta que no se proporcion un valor correspondiente
     //no prosigue
