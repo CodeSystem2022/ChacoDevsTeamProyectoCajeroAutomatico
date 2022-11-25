@@ -25,7 +25,7 @@ public class Validaciones {
         }
     }
 
-    public static boolean esUnNumero(String n){
+    public  boolean esUnNumero(String n){
         try{
             Integer.parseInt(n);
             return true;
