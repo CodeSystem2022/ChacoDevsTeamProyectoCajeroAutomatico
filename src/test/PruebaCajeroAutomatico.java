@@ -33,12 +33,13 @@ public class PruebaCajeroAutomatico {
         MenuTransferencia transferencias = new MenuTransferencia();
         SubMenuPantallaPR subMenuPantallaPR = new SubMenuPantallaPR();
         PantallaEditarVerDatos pantallaEdDatosPersonales = new PantallaEditarVerDatos();
+        PantallaSubMenuPrestamos pantallaSubMenuPrestamos = new PantallaSubMenuPrestamos();
            switch(opcion) {
                case 1: transferencias.pantallaSubMenuMovconsultas(ctaBancaria);
                    break;
                case 2:depositoExtracciones.menuDepoExtrac(ctaBancaria);
                    break;
-               case 3:PantallaSubMenuPrestamos.generarPantallaPrestamos(ctaBancaria);
+               case 3:pantallaSubMenuPrestamos.generarPantallaPrestamos(ctaBancaria);
                    break;
                case 4:subMenuPantallaPR.pantallaSubMenuPagosRecargas(ctaBancaria);
                    break;
