@@ -26,7 +26,7 @@ public class MenuPantallaPrincipalUI {
                 .append("\n")
                 .append("0<----SALIR ")
                 .toString(), TitulosPantallas.TITULOCAJERO.descripcion,1));
-        if(response.equals("0")||validaciones.esUnNumero(response)) {
+        if((response== null || response.equals("0"))||validaciones.esUnNumero(response)) {
             bandera = true;
         }else {
             JOptionPane.showMessageDialog(null, "ERROR, INGRESO INCORRECTO ", TitulosPantallas.TITULOCAJERO.descripcion, JOptionPane.ERROR_MESSAGE);
