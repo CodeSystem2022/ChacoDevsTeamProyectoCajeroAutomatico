@@ -1,5 +1,6 @@
 package ui;
 
+import components.Validaciones;
 import model.CtaBancaria;
 import model.TitulosPantallas;
 import ui.prestamos.SubPantallaPrestamos;
@@ -9,9 +10,12 @@ import javax.swing.*;
 import static test.PruebaCajeroAutomatico.menuPantallaPrincipalUI;
 
 public class PantallaSubMenuPrestamos {
-
-    public static void generarPantallaPrestamos(CtaBancaria ctaBancaria){
-        int opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
+    private Validaciones validaciones = new Validaciones();
+    public void generarPantallaPrestamos(CtaBancaria ctaBancaria){
+        String opcion="0";
+        boolean bandera = false;
+        do {
+            opcion = JOptionPane.showInputDialog(null,
                 new StringBuilder().append("                   SOLICITUD DE PRESTAMOS               \n")
                         .append("               \n")
                         .append("             POR FAVOR SELECCIONE EL TIPO DE               \n")
@@ -21,11 +25,19 @@ public class PantallaSubMenuPrestamos {
                         .append("               \n")
                         .append("01<----SOLICITUD DE PRESTAMOS               \n")
                         .append("00<--------------------VOLVER               \n")
-                        .toString(), TitulosPantallas.TITULOPRESTAMOS.descripcion,1));
-        opcionSeleccion(opcion, ctaBancaria);
+                        .toString(), TitulosPantallas.TITULOPRESTAMOS.descripcion,1);
+            opcion=opcion==null?"0":opcion;
+            if(opcion.equals("0")||validaciones.esUnNumero(opcion)) {
+                bandera = true;
+            }else {
+                JOptionPane.showMessageDialog(null, "ERROR, INGRESO INCORRECTO ", TitulosPantallas.TITULOMOVIMIENTOCONSULTAS.descripcion, JOptionPane.ERROR_MESSAGE);
+                bandera = false;
+            }
+        }while(!bandera);
+        opcionSeleccion(Integer.parseInt(opcion), ctaBancaria);
     }
 
-    public static void opcionSeleccion(int opcion, CtaBancaria ctaBancaria) {
+    public  void opcionSeleccion(int opcion, CtaBancaria ctaBancaria) {
             switch (opcion) {
                 case 1:
                     SubPantallaPrestamos.pantallaSubMenuPrestamosSelMonto(ctaBancaria);
