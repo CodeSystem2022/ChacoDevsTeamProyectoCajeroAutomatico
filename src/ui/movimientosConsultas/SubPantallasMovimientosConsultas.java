@@ -2,6 +2,7 @@ package ui.movimientosConsultas;
 
 import model.CtaBancaria;
 import model.Movimiento;
+import model.TitulosPantallas;
 import ui.SubMenuPantallaMovCons;
 
 import javax.swing.*;
@@ -9,7 +10,7 @@ import java.text.DecimalFormat;
 
 public class SubPantallasMovimientosConsultas {
     //generador de numero aleatorio
-    private static final double CAMBIO=(double) (Math.random() * (190 - 160)) + 160;
+    private static final double CAMBIO=(Math.random() * (190 - 160)) + 160;
     SubMenuPantallaMovCons pantallaMovCon = new SubMenuPantallaMovCons();
 
     public void mostrarMovimientos(CtaBancaria ctaBancaria) {
@@ -29,7 +30,7 @@ public class SubPantallasMovimientosConsultas {
                             "" + (listado!=null?listado:"NO EXISTEN MOVIMIENTOS") + "\n" +
                             "\n" +
                             "Saldo de la  " + ctaBancaria.getTipoCuentaBancaria() + " N°" + ctaBancaria.getNumCta() + " $" + df.format(ctaBancaria.getSaldo())
-                    , "MOVIMIENTOS/CONSULTAS", 1);
+                    ,TitulosPantallas.TITULOMOVIMIENTOCONSULTAS.descripcion, JOptionPane.INFORMATION_MESSAGE);
 
         pantallaMovCon.pantallaSubMenuMovconsultas(ctaBancaria);
     }
@@ -39,7 +40,7 @@ public class SubPantallasMovimientosConsultas {
                 "\n" +
                 "Saldo de la "+ctaBancaria.getTipoCuentaBancaria()+" N°"+ctaBancaria.getNumCta()+
                 " $"+ ctaBancaria.getSaldo()+"\n"+
-                "\n");
+                "\n", TitulosPantallas.TITULOMOVIMIENTOCONSULTAS.descripcion, JOptionPane.INFORMATION_MESSAGE);
         pantallaMovCon.pantallaSubMenuMovconsultas(ctaBancaria);
     }
 
@@ -55,7 +56,7 @@ public class SubPantallasMovimientosConsultas {
                 "\n" +
                 "1 USD -"+df.format(CAMBIO)+" ARS\n" +
                 "\n" +
-                "1 ARS -"+dfUSD.format(1/CAMBIO)+" USD\n" );
+                "1 ARS -"+dfUSD.format(1/CAMBIO)+" USD\n", TitulosPantallas.TITULOMOVIMIENTOCONSULTAS.descripcion, JOptionPane.INFORMATION_MESSAGE );
         pantallaMovCon.pantallaSubMenuMovconsultas(cuentaBancaria);
 
     }
@@ -64,7 +65,7 @@ public class SubPantallasMovimientosConsultas {
                 "\n" +
                 cuentaBancaria.getTipoCuentaBancaria()+" N° " + cuentaBancaria.getNumCta()+"\n" +
                 "\n" +
-                "CBU:"+cuentaBancaria.getCBU()+"\n");
+                "CBU:"+cuentaBancaria.getCBU()+"\n", TitulosPantallas.TITULOMOVIMIENTOCONSULTAS.descripcion, JOptionPane.INFORMATION_MESSAGE);
         pantallaMovCon.pantallaSubMenuMovconsultas(cuentaBancaria);
 
     }
