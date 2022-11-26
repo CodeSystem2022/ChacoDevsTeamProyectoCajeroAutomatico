@@ -41,10 +41,11 @@ private Validaciones validaciones = new Validaciones();
         switch(opcion) {
             case 1: extracciones.pantallaExtracciones(ctaBancaria);
                 break;
-            case 2:
+            case 2: depositos.pantallaDepositos(ctaBancaria);
                 break;
-            case 3:
+            case 0:
                 break;
+
         }
     }
 }
