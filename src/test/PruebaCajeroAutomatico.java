@@ -1,7 +1,7 @@
 package test;
 import model.CtaBancaria;
+import model.TitulosPantallas;
 import ui.*;
-import ui.editardatos.PantallaSubMenuEdDatPersonal;
 import ui.transferencia.MenuTransferencia;
 import javax.swing.*;
 
@@ -47,12 +47,9 @@ public class PruebaCajeroAutomatico {
                     break;
                case 6:pantallaEdDatosPersonales.pantallaVerOEditarDatos(ctaBancaria);
                     break;
-               case 0: JOptionPane.showMessageDialog(null,"ADIOS GRACIAS POR USAR NUESTROS SERVICIOS");
+               case 0: JOptionPane.showMessageDialog(null,"ADIOS GRACIAS POR USAR NUESTROS SERVICIOS", TitulosPantallas.TITULOCAJERO.descripcion, JOptionPane.INFORMATION_MESSAGE);
                return;
-               default:
-                   JOptionPane.showMessageDialog(null,"Ingreso Erroneo");
-                   opcion=menuPantallaPrincipalUI.pantallaPrincipalOpciones();
-                   opcionSeleccion(opcion);
+               default:JOptionPane.showMessageDialog(null,"INGRESO ERRONEO",TitulosPantallas.TITULOCAJERO.descripcion,JOptionPane.ERROR_MESSAGE);
                break;
            }
            opcion = menuPantallaPrincipalUI.pantallaPrincipalOpciones();

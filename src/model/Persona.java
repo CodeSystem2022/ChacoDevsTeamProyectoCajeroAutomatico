@@ -49,4 +49,16 @@ public class Persona {
     public void setDni(Long dni) {
         this.dni = dni;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder()
+                .append("                   DATOS PERSONALES                      \n")
+                .append("NOMBRE: " + this.getNombre() + "-APELLIDO: " + this.getApellido() + "\n")
+                .append("DNI: " + this.getDni() + "               \n")
+                .append("DOMICILIO: " +this.getDomicilio().getDireccion() + "\n")
+                .append("LOCALIDAD: " + this.getDomicilio().getLocalidad() + "\n")
+                .append("PROVINCIA: " + this.getDomicilio().getProvincia() + "\n");
+        return sb.toString();
+    }
 }
