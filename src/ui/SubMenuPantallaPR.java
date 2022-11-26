@@ -35,7 +35,7 @@ public class SubMenuPantallaPR {
         SubPantallaRecarga subPantallaRecarga = new SubPantallaRecarga();
         SubPantallaPagos subpantallaPagos = new SubPantallaPagos();
         Validaciones validaciones = new Validaciones();
-        while (validaciones.validaIngMenuPrin(opcion,5)) {
+        while (validaciones.validaIngMenuPrin(opcion,3)) {
             switch(opcion) {
                 case 1:
                     subpantallaPagos.pantallaSubMenuPagos(ctaBancaria);

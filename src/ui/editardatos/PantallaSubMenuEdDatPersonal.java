@@ -81,14 +81,7 @@ public class PantallaSubMenuEdDatPersonal {
     }
     public void verDatos(CtaBancaria ctaBancaria) {
         if(ctaBancaria.getPersona()!=null) {
-            JOptionPane.showMessageDialog(null,new StringBuilder()
-                    .append("                   DATOS PERSONALES                      \n")
-                    .append("NOMBRE: " + ctaBancaria.getPersona().getNombre() + "-APELLIDO: " + ctaBancaria.getPersona().getApellido() + "\n")
-                    .append("DNI: " + ctaBancaria.getPersona().getDni() + "               \n")
-                    .append("DOMICILIO: " + ctaBancaria.getPersona().getDomicilio().getDireccion() + "\n")
-                    .append("LOCALIDAD: " + ctaBancaria.getPersona().getDomicilio().getLocalidad() + "\n")
-                    .append("PROVINCIA: " + ctaBancaria.getPersona().getDomicilio().getProvincia() + "\n")
-                    .toString());
+            JOptionPane.showMessageDialog(null,ctaBancaria.getPersona().toString(), TitulosPantallas.TITULODATOSPERSONALES.descripcion, JOptionPane.INFORMATION_MESSAGE);
         }else
             JOptionPane.showMessageDialog(null, "ERROR, DEBE CARGAR LOS DATOS PERSONALES", TitulosPantallas.TITULODATOSPERSONALES.descripcion, JOptionPane.ERROR_MESSAGE);
     }

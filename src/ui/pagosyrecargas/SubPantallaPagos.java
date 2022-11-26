@@ -17,9 +17,9 @@ public class SubPantallaPagos {
     private SubMenuPantallaPR subMenuPantallaPR = new SubMenuPantallaPR();
     private Validaciones validaciones = new Validaciones();
     //Creamos variables constantes con valores aleatorios para cada pago de servicio
-    private static final double MONTO_SAMEEP=(double) (Math.random() * (1500 - 1000)) + 1000;
-    private static final double MONTO_SECHEEP=(double) (Math.random() * (8000 - 3000)) + 3000;
-    private static final double MONTO_IMPUESTOS_MUN=(double) (Math.random() * (1500 - 100)) + 100;
+    private static final double MONTO_SAMEEP=(Math.random() * (1500 - 1000)) + 1000;
+    private static final double MONTO_SECHEEP=(Math.random() * (8000 - 3000)) + 3000;
+    private static final double MONTO_IMPUESTOS_MUN=(Math.random() * (1500 - 100)) + 100;
     //Creamos metodos para generar la pantalla
     public void pantallaSubMenuPagos(CtaBancaria ctabancaria) {
         String opcion="0";
