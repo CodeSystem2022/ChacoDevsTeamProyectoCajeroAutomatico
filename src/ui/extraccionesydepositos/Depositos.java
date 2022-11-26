@@ -2,10 +2,12 @@ package ui.extraccionesydepositos;
 import components.Validaciones;
 import model.CtaBancaria;
 import model.TitulosPantallas;
+import ui.DepositoExtracciones;
 
 import javax.swing.*;
 public class Depositos {
     private Validaciones validaciones = new Validaciones();
+    private DepositoExtracciones depositoExtracciones = new DepositoExtracciones();
     public void pantallaDepositos(CtaBancaria ctaBancaria) { String opcion="0";
         boolean bandera = false;
         do {
@@ -33,7 +35,7 @@ public class Depositos {
         switch (parseInt) {
             case 1:
                 break;
-            case 2:
+            case 0: depositoExtracciones.menuDepoExtrac(ctaBancaria);
                 break;
         }
     }

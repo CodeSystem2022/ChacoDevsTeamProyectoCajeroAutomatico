@@ -3,6 +3,7 @@ package ui;
 import components.Validaciones;
 import model.CtaBancaria;
 import model.TitulosPantallas;
+import test.PruebaCajeroAutomatico;
 import ui.extraccionesydepositos.Depositos;
 import ui.extraccionesydepositos.Extracciones;
 
@@ -11,6 +12,8 @@ import javax.swing.*;
 
 public class DepositoExtracciones {
 private Validaciones validaciones = new Validaciones();
+
+
     public void menuDepoExtrac(CtaBancaria ctaBancaria){
         String opcion="0";
         boolean bandera = false;
@@ -38,6 +41,7 @@ private Validaciones validaciones = new Validaciones();
     public void opciones(int opcion, CtaBancaria ctaBancaria) {
         Extracciones extracciones = new Extracciones();
         Depositos depositos = new  Depositos();
+
         switch(opcion) {
             case 1: extracciones.pantallaExtracciones(ctaBancaria);
                 break;

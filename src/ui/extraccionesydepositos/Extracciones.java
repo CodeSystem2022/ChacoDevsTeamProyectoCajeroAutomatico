@@ -3,13 +3,14 @@ package ui.extraccionesydepositos;
 import components.Validaciones;
 import model.CtaBancaria;
 import model.TitulosPantallas;
+import ui.DepositoExtracciones;
 
 import javax.swing.*;
 
 
 public class Extracciones {
     private Validaciones validaciones = new Validaciones();
-
+    private DepositoExtracciones depositoExtracciones = new DepositoExtracciones();
     public void pantallaExtracciones(CtaBancaria ctaBancaria) {
         String opcion="0";
         boolean bandera = false;
@@ -50,7 +51,7 @@ public class Extracciones {
                 break;
             case 6:
                 break;
-            case 0:
+            case 0: depositoExtracciones.menuDepoExtrac(ctaBancaria);
                 break;
         }
     }
