@@ -50,7 +50,8 @@ public class PruebaCajeroAutomatico {
                case 0: JOptionPane.showMessageDialog(null,"ADIOS GRACIAS POR USAR NUESTROS SERVICIOS", TitulosPantallas.TITULOCAJERO.descripcion, JOptionPane.INFORMATION_MESSAGE);
                return;
                default:JOptionPane.showMessageDialog(null,"INGRESO ERRONEO",TitulosPantallas.TITULOCAJERO.descripcion,JOptionPane.ERROR_MESSAGE);
-               break;
+               opcion=menuPantallaPrincipalUI.pantallaPrincipalOpciones();
+               opcionSeleccion(opcion);
            }
            opcion = menuPantallaPrincipalUI.pantallaPrincipalOpciones();
            opcionSeleccion(opcion);
