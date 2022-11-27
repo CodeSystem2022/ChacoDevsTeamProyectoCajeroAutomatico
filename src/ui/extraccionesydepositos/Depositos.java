@@ -19,15 +19,17 @@ public class Depositos {
         boolean bandera = false;
         do {
             opcion = (JOptionPane.showInputDialog(
-                    new StringBuilder().append("        MENU DE DEPOSITOS        \n")
+                    new StringBuilder().append("                                        MENU DE DEPOSITOS        \n")
                             .append("        SELECCIONE EL MONTO QUE DESEA DEPOSITAR EN SU CUENTA      \n")
-                            .append(" 1<-------- 10.000                                          8.000 -------->2 ")
+                            .append("\n")
+                            .append(" 1<-------- 10.000                                         8.000 -------->2 ")
                             .append("        \n")
                             .append(" 3<-------- 6.000                                           4.000 -------->4")
                             .append("        \n")
-                            .append(" 5<-------- 2.000                                           1.000 --------> 6")
+                            .append(" 5<-------- 2.000                                           1.000 -------->6")
                             .append("        \n")
-                            .append(" 0<-------- VOLVER                                  Ingrese un Monto ------->7")
+                            .append(" 0<-------- VOLVER                DIGITE UN MONTO ------->7\n")
+                            .append("\n")
                             .toString()));
             opcion=opcion==null?"0":opcion;
             if(opcion.equals("0")||validaciones.esUnNumero(opcion)) {
@@ -115,11 +117,11 @@ return 0;
 }
 public void mostrarMensajeDeposito(CtaBancaria ctaBancaria, double monto){
     DecimalFormat df = new DecimalFormat("0.00");
-    JOptionPane.showMessageDialog(null,"             DEPOSITO REALIZADO           \n" +
+    JOptionPane.showMessageDialog(null,"                    DEPOSITO REALIZADO           \n" +
             "\n" +
-            "SE REALIZO EL DEPOSITO DEL MONTO $ "+df.format(monto)+
+            "SE REALIZO EL DEPOSITO DEL MONTO          $"+df.format(monto)+ "\n"+
             "\n"+
-            "Saldo de la "+ctaBancaria.getTipoCuentaBancaria()+" N°"+ctaBancaria.getNumCta()+
+            "SALDO DE LA "+ctaBancaria.getTipoCuentaBancaria().toUpperCase()+" N°"+ctaBancaria.getNumCta()+
             " $"+ df.format (ctaBancaria.getSaldo())+"\n"+
             "\n", TitulosPantallas.TITULODEPTRANS.descripcion, JOptionPane.INFORMATION_MESSAGE);
 }

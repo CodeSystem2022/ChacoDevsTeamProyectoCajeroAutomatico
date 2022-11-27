@@ -20,12 +20,12 @@ private Validaciones validaciones = new Validaciones();
         do {
 
          opcion = (JOptionPane.showInputDialog(null,
-                new StringBuilder().append("        MENU DE DEPOSITOS Y EXTRACCIONES        \n")
+                new StringBuilder().append("                        MENU DE DEPOSITOS Y EXTRACCIONES        \n")
                         .append("        SELECCIONE EL TIPO DE OPERACION QUE DESEA EFECTUAR      \n")
-                        .append("        ")
-                        .append("1<---- EXTRACCION                            DEPOSITO------------>2")
+                        .append("\n")
+                        .append("1<---- EXTRACCION                                              DEPOSITO------------>2")
                         .append("        \n")
-                        .append("   0<---- VOLVER                                                      ")
+                        .append("0<---- VOLVER                                                      ")
                         .toString(), TitulosPantallas.TITULODEPTRANS.descripcion,1));
             opcion=opcion==null?"0":opcion;
             if(opcion.equals("0")||validaciones.esUnNumero(opcion)) {
