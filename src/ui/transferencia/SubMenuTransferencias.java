@@ -1,13 +1,13 @@
 package ui.transferencia;
-
-import javax.swing.*;
-
+import javax.swing.*; 
 import model.*;
-
-import ui.transferencia.SubPantallaTransferencias;
-
 import java.awt.*;
 import java.util.Date;
+
+/* 
+* la clase SubMenuTransferencias es la continuación de SubPantallaTransferencias y mostrará un cuadro de opciones en
+* las que el usuario deberá elegir el motivo de la transferencia
+*/
 
 public class SubMenuTransferencias {
     public void pantallaSubmenuTranferencia(CtaBancaria ctaBancaria){
@@ -18,6 +18,11 @@ public class SubMenuTransferencias {
         ));
         newPaneDialog(ctaBancaria,opcionTransferencia);
     }
+
+     
+    // * Se muestra un cuadro de doble entrada donde se deberá ingresar el CBU de destino y
+    // * el monto a transferir 
+    
     public void newPaneDialog(CtaBancaria ctaBancaria, int opcion) {
         JFrame frame;
         JPanel pane;
@@ -66,6 +71,7 @@ public class SubMenuTransferencias {
             }
             armadoMensaje+="CBU: "+cbu;
 
+            
             Movimiento movimiento= new Movimiento();
             movimiento.setFecha(new Date());
             movimiento.setTipoOperacion(armadoMensaje);
@@ -73,7 +79,8 @@ public class SubMenuTransferencias {
             if (ctaBancaria.guardarValidarMovimiento(movimiento))
             JOptionPane.showMessageDialog(null, "SE REALIZÓ LA TRANSFERENCIA CON ÉXITO AL CBU N° " + cbu);
             else
-            JOptionPane.showMessageDialog(null, "ERROR, LA CUENTA N° "+ctaBancaria.getNumCta()+" NO POSEE SALDO ");
+            JOptionPane.showMessageDialog(null, "ERROR, LA CUENTA N° "+ctaBancaria.getNumCta()+" NO POSEE SALDO "); // * Si la cuenta no posee el saldo necesario
+                                                                                                                                    // * mandará un mensaje de error
         }
         
     }

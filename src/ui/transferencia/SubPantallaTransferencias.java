@@ -1,13 +1,12 @@
 package ui.transferencia;
-
 import javax.swing.JOptionPane;
-
-import components.Validaciones;
 import model.CtaBancaria;
-import ui.movimientosConsultas.SubPantallasMovimientosConsultas;
+
+// * La clase SubPantallaTransferencias mostrará la cuenta a la que se transferirá el monto
 
 public class SubPantallaTransferencias {
 
+    // * Llama a la clase CtaBancaria para obtener los atributos getTipoCuentaBancaria y getNumCta
     public void transferencias(CtaBancaria ctaBancaria){
         int opcionTransferencia = Integer.parseInt(JOptionPane.showInputDialog( "                  TRANSFERENCIAS/DEPOSITOS                   \n " +
                             "\n"+
@@ -16,7 +15,11 @@ public class SubPantallaTransferencias {
 
         ));
 
-    SubMenuTransferencias subMenuTranferencias = new SubMenuTransferencias();
+
+// * Se corre una pequeña verificación para que el usuario ingrese un numero correcto
+// * caso contrario le mandará un mensaje de error
+
+    SubMenuTransferencias subMenuTranferencias = new SubMenuTransferencias(); 
     if (opcionTransferencia == 1)
     subMenuTranferencias.pantallaSubmenuTranferencia(ctaBancaria);
         else if (opcionTransferencia > 1 || opcionTransferencia<0)
