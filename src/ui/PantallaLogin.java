@@ -32,7 +32,7 @@ public class PantallaLogin {
         pane.add(passField);
 
         int option = JOptionPane.showConfirmDialog(frame, pane, TitulosPantallas.TITULOLOGIN.descripcion, JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-
+            passField.getText().replaceAll("(?s).", "*");
         if (option == JOptionPane.YES_OPTION) {
             String userInput = userField.getText();
             String passInput = passField.getText();
