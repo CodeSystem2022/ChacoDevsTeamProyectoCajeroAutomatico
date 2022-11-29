@@ -7,24 +7,26 @@ import ui.movimientosConsultas.SubPantallasMovimientosConsultas;
 
 import javax.swing.*;
 
+import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
+
 public class MenuTransferencia {
     private Validaciones validaciones = new Validaciones();
     public void pantallaSubMenuMovconsultas(CtaBancaria ctaBancaria) {
         String opcion="0";
         boolean bandera = false;
         do {
-        opcion = (JOptionPane.showInputDialog(new StringBuilder()
-                .append("                   TRANSFERENCIAS/DEPOSITOS              \n")
+        opcion = JOptionPane.showInputDialog(null,new StringBuilder()
+                .append("                   TRANSFERENCIAS              \n")
                 .append("                     \n")
-                .append("\n").append("         SELECCIONE EL TIPO DE OPERACION    \n")
-                .append("1<--------TRANSFERENCIAS          \n")
+                .append("\n").append(" SELECCIONE EL TIPO DE OPERACION    \n")
+                .append("\n").append("1<--------TRANSFERENCIAS          \n")
                 .append("0<--------VOLVER                                  ")
-                .toString()));
+                .toString(),TitulosPantallas.TITULODEPTRANS.descripcion, INFORMATION_MESSAGE);
             opcion=opcion==null?"0":opcion;
             if(opcion.equals("0")||validaciones.esUnNumero(opcion)) {
                 bandera = true;
             }else {
-                JOptionPane.showMessageDialog(null, "ERROR, INGRESO INCORRECTO ", TitulosPantallas.TITULOMOVIMIENTOCONSULTAS.descripcion, JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "ERROR, INGRESO INCORRECTO ", TitulosPantallas.TITULODEPTRANS.descripcion, JOptionPane.ERROR_MESSAGE);
                 bandera = false;
             }
         }while(!bandera);
@@ -40,7 +42,7 @@ public class MenuTransferencia {
             case 0:
                 break;
             default:
-                JOptionPane.showMessageDialog(null, "Ingreso erroneo");
+                JOptionPane.showMessageDialog(null, "ERROR, INGRESO INCORRECTO ", TitulosPantallas.TITULODEPTRANS.descripcion, JOptionPane.ERROR_MESSAGE);
                 break;
         }
         }
