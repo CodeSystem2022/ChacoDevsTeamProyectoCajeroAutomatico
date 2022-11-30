@@ -1,9 +1,9 @@
 package ui.extraccionesydepositos;
 
 import components.Validaciones;
-import model.CtaBancaria;
-import model.Movimiento;
-import model.TitulosPantallas;
+import domain.CtaBancaria;
+import domain.Movimiento;
+import domain.TitulosPantallas;
 import ui.DepositoExtracciones;
 
 import javax.swing.*;

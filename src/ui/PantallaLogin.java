@@ -1,11 +1,11 @@
 package ui;
 
 import components.Validaciones;
-import model.CtaBancaria;
-import model.User;
+import domain.CtaBancaria;
+import domain.User;
 import javax.swing.*;
 import java.awt.*;
-import model.TitulosPantallas;
+import domain.TitulosPantallas;
 /*
  *Clase PantallaLogin: esta clase se encargar de crear la pantalla de logeo en la cual se podra ingresar con un
  * usuario administrador: usuario:admin password:1234, o bien da la posibilidad al usuario a dar de alta su

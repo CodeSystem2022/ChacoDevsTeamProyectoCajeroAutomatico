@@ -1,6 +1,6 @@
 package test;
-import model.CtaBancaria;
-import model.TitulosPantallas;
+import domain.CtaBancaria;
+import domain.TitulosPantallas;
 import ui.*;
 import ui.transferencia.MenuTransferencia;
 import javax.swing.*;

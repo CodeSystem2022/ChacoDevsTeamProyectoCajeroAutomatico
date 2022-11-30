@@ -1,4 +1,4 @@
-package model;
+package domain;
 /*
  *Clase Persona: esta clase representara los datos necesarios de una persona
  */

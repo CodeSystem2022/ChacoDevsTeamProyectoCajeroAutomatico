@@ -1,9 +1,8 @@
 package ui.transferencia;
 
 import components.Validaciones;
-import model.CtaBancaria;
-import model.TitulosPantallas;
-import ui.movimientosConsultas.SubPantallasMovimientosConsultas;
+import domain.CtaBancaria;
+import domain.TitulosPantallas;
 
 import javax.swing.*;
 

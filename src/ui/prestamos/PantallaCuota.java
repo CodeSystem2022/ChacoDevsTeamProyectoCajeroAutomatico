@@ -5,13 +5,12 @@ import java.text.DecimalFormat;
 import java.util.Date;
 
 import components.Validaciones;
-import model.CtaBancaria;
-import model.Movimiento;
-import model.TitulosPantallas;
+import domain.CtaBancaria;
+import domain.Movimiento;
+import domain.TitulosPantallas;
 
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
-import static test.PruebaCajeroAutomatico.menuPantallaPrincipalUI;
 
 public class PantallaCuota {
     private DecimalFormat df = new DecimalFormat("0.00");

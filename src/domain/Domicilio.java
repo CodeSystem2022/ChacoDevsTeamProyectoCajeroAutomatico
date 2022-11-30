@@ -1,4 +1,4 @@
-package model;
+package domain;
 /*
  *Clase Domicilio
  * Esta clase cuenta con los sieguientes atributos:
