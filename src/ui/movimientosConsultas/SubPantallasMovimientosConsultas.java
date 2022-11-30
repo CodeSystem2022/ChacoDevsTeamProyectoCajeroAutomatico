@@ -1,5 +1,6 @@
 package ui.movimientosConsultas;
 
+import components.Validaciones;
 import model.CtaBancaria;
 import model.Movimiento;
 import model.TitulosPantallas;
@@ -12,14 +13,14 @@ public class SubPantallasMovimientosConsultas {
     //generador de numero aleatorio
     private static final double CAMBIO=(Math.random() * (190 - 160)) + 160;
     SubMenuPantallaMovCons pantallaMovCon = new SubMenuPantallaMovCons();
-
+    private Validaciones validaciones = new Validaciones();
     public void mostrarMovimientos(CtaBancaria ctaBancaria) {
         int cont=1;
         String listado=new String();
         DecimalFormat df = new DecimalFormat("0.00");
         if(ctaBancaria.getMovimientos()!=null) {
             for (Movimiento movimiento : ctaBancaria.getMovimientos()) {
-                listado += "\nN°:" + cont + " - FECHA: " + movimiento.getFecha().toInstant().toString() + " - CONCEPTO: " + movimiento.getTipoOperacion() + " $ " + df.format(movimiento.getMontoOperacion()) + "";
+                listado += "\nN°:" + cont + " - FECHA: " + validaciones.formatFecha(movimiento.getFecha()) + " - CONCEPTO: " + movimiento.getTipoOperacion() + " $ " + df.format(movimiento.getMontoOperacion()) + "";
                 cont += 1;
             }
         }

@@ -3,6 +3,8 @@ package components;
 import model.CtaBancaria;
 
 import javax.swing.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Validaciones {
 
@@ -32,6 +34,12 @@ public class Validaciones {
         }catch (NumberFormatException nfe){
             return false;
         }
+    }
+
+    public String formatFecha(Date date){
+        String pattern ="dd/MM/YYYY hh:mm:ss";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        return simpleDateFormat.format(date);
     }
 
 }
