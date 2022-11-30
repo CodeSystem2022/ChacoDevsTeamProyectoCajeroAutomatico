@@ -13,7 +13,7 @@ import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
 import static test.PruebaCajeroAutomatico.menuPantallaPrincipalUI;
 
-public class Pantallacuota {
+public class PantallaCuota {
     private DecimalFormat df = new DecimalFormat("0.00");
     private Validaciones validaciones = new Validaciones();
     public  void pantallaSeleccionCuota(CtaBancaria ctaBancaria, double monto){
