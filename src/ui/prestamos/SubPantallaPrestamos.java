@@ -61,7 +61,7 @@ public class SubPantallaPrestamos {
     //Al seleccionar un monto determinado, el menú entrará en la siguiente sección donde
     //se redireccionará a la PantallaSeleccionCuota, donde se verá el importe y la tasa de interes.
     public void procesarMonto(CtaBancaria ctaBancaria, int opcion) {
-        Pantallacuota pantallaCuota= new Pantallacuota();
+        PantallaCuota pantallaCuota= new PantallaCuota();
         double monto = 0;
         switch (opcion) {
             case 1:
