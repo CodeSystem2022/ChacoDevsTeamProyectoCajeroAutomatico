@@ -1,4 +1,4 @@
-package model;
+package domain;
 //Se creo una Clase Enum donde contenga los diversos titulos de pantallas a utilizarse en el proyecto
 public enum TitulosPantallas {
     TITULOLOGIN("LOGIN"),

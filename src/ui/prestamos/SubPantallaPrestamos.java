@@ -3,8 +3,8 @@ package ui.prestamos;
 import javax.swing.JOptionPane;
 
 import components.Validaciones;
-import model.CtaBancaria;
-import model.TitulosPantallas;
+import domain.CtaBancaria;
+import domain.TitulosPantallas;
 
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;

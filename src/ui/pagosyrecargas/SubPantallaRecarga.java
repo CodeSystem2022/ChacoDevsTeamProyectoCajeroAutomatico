@@ -1,13 +1,13 @@
 package ui.pagosyrecargas;
 
 import components.Validaciones;
-import model.CtaBancaria;
+import domain.CtaBancaria;
 
 import java.awt.*;
 import java.util.Date;
 import javax.swing.*;
-import model.Movimiento;
-import model.TitulosPantallas;
+import domain.Movimiento;
+import domain.TitulosPantallas;
 import ui.SubMenuPantallaPR;
 
 

@@ -1,8 +1,8 @@
 package ui;
 
 import components.Validaciones;
-import model.CtaBancaria;
-import model.TitulosPantallas;
+import domain.CtaBancaria;
+import domain.TitulosPantallas;
 import ui.movimientosConsultas.SubPantallasMovimientosConsultas;
 
 import javax.swing.*;

@@ -1,9 +1,9 @@
 package ui.editardatos;
 
-import model.CtaBancaria;
-import model.Domicilio;
-import model.Persona;
-import model.TitulosPantallas;
+import domain.CtaBancaria;
+import domain.Domicilio;
+import domain.Persona;
+import domain.TitulosPantallas;
 
 import javax.swing.*;
 import java.awt.*;

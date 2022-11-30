@@ -1,9 +1,8 @@
 package ui;
 
 import components.Validaciones;
-import model.CtaBancaria;
-import model.TitulosPantallas;
-import test.PruebaCajeroAutomatico;
+import domain.CtaBancaria;
+import domain.TitulosPantallas;
 import ui.extraccionesydepositos.Depositos;
 import ui.extraccionesydepositos.Extracciones;
 

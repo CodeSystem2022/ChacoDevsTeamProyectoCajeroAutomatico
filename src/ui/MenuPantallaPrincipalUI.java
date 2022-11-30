@@ -1,10 +1,7 @@
 package ui;
 
 import components.Validaciones;
-import model.CtaBancaria;
-import model.Domicilio;
-import model.Persona;
-import model.TitulosPantallas;
+import domain.TitulosPantallas;
 
 import javax.swing.*;
 

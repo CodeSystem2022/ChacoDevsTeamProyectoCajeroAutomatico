@@ -1,6 +1,6 @@
 package components;
 
-import model.CtaBancaria;
+import domain.CtaBancaria;
 
 import javax.swing.*;
 import java.text.SimpleDateFormat;

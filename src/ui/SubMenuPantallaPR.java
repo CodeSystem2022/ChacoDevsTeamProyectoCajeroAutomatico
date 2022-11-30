@@ -2,8 +2,8 @@ package ui;
 import javax.swing.JOptionPane;
 
 import components.Validaciones;
-import model.CtaBancaria;
-import model.TitulosPantallas;
+import domain.CtaBancaria;
+import domain.TitulosPantallas;
 import ui.pagosyrecargas.SubPantallaPagos;
 import ui.pagosyrecargas.SubPantallaRecarga;
 public class SubMenuPantallaPR {

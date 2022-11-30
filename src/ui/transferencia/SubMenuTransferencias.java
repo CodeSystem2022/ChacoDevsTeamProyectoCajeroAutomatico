@@ -2,7 +2,7 @@ package ui.transferencia;
 import javax.swing.*;
 
 import components.Validaciones;
-import model.*;
+import domain.*;
 import java.awt.*;
 import java.util.Date;
 
