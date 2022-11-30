@@ -8,7 +8,9 @@ import ui.movimientosConsultas.SubPantallasMovimientosConsultas;
 import javax.swing.*;
 
 import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
-
+/*Menu principal de transferencias,en el cual el usuario visualiza dos opciones:
+        La primera opcion permite al usuario ingresar para realizar la transferencia y la segunda
+        opc nos devuelve al menu principal*/
 public class MenuTransferencia {
     private Validaciones validaciones = new Validaciones();
     public void pantallaSubMenuMovconsultas(CtaBancaria ctaBancaria) {
@@ -32,7 +34,7 @@ public class MenuTransferencia {
         }while(!bandera);
         opcionSeleccion(Integer.parseInt(opcion), ctaBancaria);
     }
-
+//Metodo que llama al menu de transferencia y arroja error si el usuario ingresa otra opcion distinta
     public void opcionSeleccion(int opcion, CtaBancaria ctaBancaria) {
         SubPantallaTransferencias subPantallaTranferencias = new SubPantallaTransferencias();
         switch (opcion) {
