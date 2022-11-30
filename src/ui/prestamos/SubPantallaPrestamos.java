@@ -6,10 +6,16 @@ import model.CtaBancaria;
 
 import static test.PruebaCajeroAutomatico.menuPantallaPrincipalUI;
 
+//La clase SubPantallaPrestamos al iniciarse mostrará por pantalla el menú con la opción
+//para solicitar un prestamo.
+
 public class SubPantallaPrestamos {
   
     public static void pantallaSubMenuPrestamosSelMonto(CtaBancaria ctabancaria){
         int opcion = Integer.parseInt(JOptionPane.showInputDialog(
+
+//Al ingresar el "1" en el menú anterior, se mostrará por pantalla las siguientes opciones a elegir.
+
             "                        PRESTAMOS               \n" +
             "           \n"+
             "        INGRESE EL NRO. DE OPCIÓN      \n"+
@@ -35,6 +41,10 @@ public class SubPantallaPrestamos {
             "00=           "+        "<-------------VOLVER            \n"));
         procesarMonto(ctabancaria,opcion);
     }
+
+    //Al seleccionar un monto determinado, el menú entrará en la siguiente sección donde
+    //se redireccionará a la PantallaSeleccionCuota, donde se verá el importe y la tasa de interes. 
+
     public static void procesarMonto(CtaBancaria ctaBancaria, int opcion) {
         double monto = 0;
         switch (opcion) {
@@ -62,12 +72,19 @@ public class SubPantallaPrestamos {
                 monto = 1000;
                 PantallaCuota.PantallaSeleccionCuota(ctaBancaria,monto);
                 break;
+
+//Al ingresar el "7", el menú desplegará la opción de ingresar un monto elegido por el usuario.
+
             case 7:
                 monto = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el monto de prestamo"));
                 PantallaCuota.PantallaSeleccionCuota(ctaBancaria,monto);
                 break;
             case 0:menuPantallaPrincipalUI.pantallaPrincipalOpciones();
             break;
+
+//Y si ocurre un error al digitar el monto, o esta fuera del rango que lo permite
+//mostrará el siguiente mensaje.
+
             default:
                 JOptionPane.showMessageDialog(null,"INGRESO ERRONEO");
                 break;
