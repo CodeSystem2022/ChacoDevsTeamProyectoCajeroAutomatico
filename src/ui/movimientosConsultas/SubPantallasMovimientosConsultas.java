@@ -1,5 +1,6 @@
 package ui.movimientosConsultas;
 
+import components.Validaciones;
 import model.CtaBancaria;
 import model.Movimiento;
 import model.TitulosPantallas;
@@ -9,19 +10,29 @@ import javax.swing.*;
 import java.text.DecimalFormat;
 
 public class SubPantallasMovimientosConsultas {
+
     //generador de numero aleatorio
     private static final double CAMBIO=(Math.random() * (190 - 160)) + 160;
     SubMenuPantallaMovCons pantallaMovCon = new SubMenuPantallaMovCons();
+    private Validaciones validaciones = new Validaciones();
 
     public void mostrarMovimientos(CtaBancaria ctaBancaria) {
         int cont=1;
-        String listado=new String();
+        String listado= "";
         DecimalFormat df = new DecimalFormat("0.00");
         if(ctaBancaria.getMovimientos()!=null) {
+            StringBuilder listadoBuilder = new StringBuilder();
             for (Movimiento movimiento : ctaBancaria.getMovimientos()) {
-                listado += "\nN°:" + cont + " - FECHA: " + movimiento.getFecha().toInstant().toString() + " - CONCEPTO: " + movimiento.getTipoOperacion() + " $ " + df.format(movimiento.getMontoOperacion()) + "";
+                listadoBuilder.append("\nN°:")
+                        .append(cont)
+                        .append(" - FECHA: ")
+                        .append(validaciones.formatFecha(movimiento.getFecha()))
+                        .append(" - CONCEPTO: ")
+                        .append(movimiento.getTipoOperacion()).append(" $ ")
+                        .append(df.format(movimiento.getMontoOperacion()));
                 cont += 1;
             }
+            listado = listadoBuilder.toString();
         }
             JOptionPane.showMessageDialog(null, "                                  ULTIMOS MOVIMIENTOS           \n" +
                             "\n" +

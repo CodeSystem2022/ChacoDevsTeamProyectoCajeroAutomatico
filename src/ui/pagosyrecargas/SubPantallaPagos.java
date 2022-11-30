@@ -5,13 +5,10 @@ import model.CtaBancaria;
 import model.Movimiento;
 import model.TitulosPantallas;
 import ui.SubMenuPantallaPR;
-import ui.prestamos.PantallaCuota;
 
 import javax.swing.*;
 
 import java.util.Date;
-
-import static test.PruebaCajeroAutomatico.menuPantallaPrincipalUI;
 
 public class SubPantallaPagos {
     private SubMenuPantallaPR subMenuPantallaPR = new SubMenuPantallaPR();
