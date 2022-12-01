@@ -8,14 +8,15 @@ import ui.SubMenuPantallaMovCons;
 
 import javax.swing.*;
 import java.text.DecimalFormat;
-
+//Clase SubPantallasMovimientosConsultas: esta clase se encargará de contener métodos relacionados a las consultas
+//sobre la información de la cuenta bancaria.
 public class SubPantallasMovimientosConsultas {
 
     //generador de numero aleatorio
     private static final double CAMBIO=(Math.random() * (190 - 160)) + 160;
     SubMenuPantallaMovCons pantallaMovCon = new SubMenuPantallaMovCons();
     private Validaciones validaciones = new Validaciones();
-
+    //Método mostrarMovimientos: listará una colección de movimientos que se hayan generado.
     public void mostrarMovimientos(CtaBancaria ctaBancaria) {
         int cont=1;
         String listado= "";
@@ -45,7 +46,7 @@ public class SubPantallasMovimientosConsultas {
 
         pantallaMovCon.pantallaSubMenuMovconsultas(ctaBancaria);
     }
-
+    //Método mostrarSaldo: mostrará el saldo actual de la cuenta.
     public void mostrarSaldo(CtaBancaria ctaBancaria) {
         JOptionPane.showMessageDialog(null,"             CONSULTA SALDO CAJA DE AHORRO           \n" +
                 "\n" +
@@ -54,7 +55,8 @@ public class SubPantallasMovimientosConsultas {
                 "\n", TitulosPantallas.TITULOMOVIMIENTOCONSULTAS.descripcion, JOptionPane.INFORMATION_MESSAGE);
         pantallaMovCon.pantallaSubMenuMovconsultas(ctaBancaria);
     }
-
+    //Método tipoCambio: mostrará el tipo de cambio de USD a ARS; se creará una variable con un valor aleatorio
+    //el cual simulará el tipo de cambio de  USD. Tendrá un mínimo y un máximo.
     public void tipoCambio(CtaBancaria cuentaBancaria) {
        DecimalFormat df = new DecimalFormat("0.00");
        DecimalFormat dfUSD = new DecimalFormat("0.0000");
@@ -71,6 +73,7 @@ public class SubPantallasMovimientosConsultas {
         pantallaMovCon.pantallaSubMenuMovconsultas(cuentaBancaria);
 
     }
+    //Métoso consultaCBU: mostrará el CBU armado en la clase CtaBancaria.
     public void consultaCBU(CtaBancaria cuentaBancaria){
         JOptionPane.showMessageDialog(null,"              CONSULTA CBU            \n" +
                 "\n" +
