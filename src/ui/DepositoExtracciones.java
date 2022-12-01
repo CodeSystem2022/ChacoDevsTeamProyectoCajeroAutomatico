@@ -7,6 +7,8 @@ import ui.extraccionesydepositos.Depositos;
 import ui.extraccionesydepositos.Extracciones;
 
 import javax.swing.*;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
+import static javax.swing.JOptionPane.showMessageDialog;
 /*
  * Clase DepositosExtracciones: esta clase se encargara de crear la pantalla del submenu Depositos y extracciones
  * donde muestra las opciones que podra seleccionar el usuario
@@ -27,10 +29,13 @@ private Validaciones validaciones = new Validaciones();
                         .append("0<---- VOLVER                                                      ")
                         .toString(), TitulosPantallas.TITULODEPTRANS.descripcion,1));
             opcion=opcion==null?"0":opcion;
-            if(opcion.equals("0")||validaciones.esUnNumero(opcion)) {
+            if(validaciones.esUnNumero(opcion) && (Integer.parseInt(opcion) >= 0 && Integer.parseInt(opcion) < 3)) {
                 bandera = true;
-            }else {
-                JOptionPane.showMessageDialog(null, "ERROR, INGRESO INCORRECTO ", TitulosPantallas.TITULOMOVIMIENTOCONSULTAS.descripcion, JOptionPane.ERROR_MESSAGE);
+            }else if(!validaciones.esUnNumero(opcion)){
+                showMessageDialog(null, "ERROR, INGRESO INCORRECTO-DEBE INGRESAR UN VALOR NÚMERICO ",TitulosPantallas.TITULOPAGOSRECARGAS.descripcion, ERROR_MESSAGE);
+                bandera = false;
+            }else if(validaciones.esUnNumero(opcion) && (Integer.parseInt(opcion) > 2 || Integer.parseInt(opcion)<0)) {
+                showMessageDialog(null, "ERROR, INGRESO INCORRECTO-DEBE INGRESAR UNA OPCION ENTRE 0 o 2 ",TitulosPantallas.TITULOPAGOSRECARGAS.descripcion, ERROR_MESSAGE);
                 bandera = false;
             }
         }while(!bandera);
