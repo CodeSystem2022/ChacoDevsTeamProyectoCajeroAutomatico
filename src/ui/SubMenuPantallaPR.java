@@ -28,13 +28,13 @@ public class SubMenuPantallaPR {
                 .append("0<---- VOLVER                                             \n")                            
                 .toString(), TitulosPantallas.TITULOPAGOSRECARGAS.descripcion,1);
             opcion=opcion==null?"0":opcion;
-            if(validaciones.esUnNumero(opcion) && (Integer.parseInt(opcion) >= 0 && Integer.parseInt(opcion) < 4)) {
+            if(validaciones.esUnNumero(opcion) && (Integer.parseInt(opcion) >= 0 && Integer.parseInt(opcion) < 3)) {
                 bandera = true;
             }else if(!validaciones.esUnNumero(opcion)){
                 showMessageDialog(null, "ERROR, INGRESO INCORRECTO-DEBE INGRESAR UN VALOR NÚMERICO ",TitulosPantallas.TITULOPAGOSRECARGAS.descripcion, ERROR_MESSAGE);
                 bandera = false;
-            }else if(validaciones.esUnNumero(opcion) && (Integer.parseInt(opcion) > 3 || Integer.parseInt(opcion)<0)) {
-                showMessageDialog(null, "ERROR, INGRESO INCORRECTO-DEBE INGRESAR UNA OPCION ENTRE 0 o 1 ",TitulosPantallas.TITULOPAGOSRECARGAS.descripcion, ERROR_MESSAGE);
+            }else if(validaciones.esUnNumero(opcion) && (Integer.parseInt(opcion) > 2 || Integer.parseInt(opcion)<0)) {
+                showMessageDialog(null, "ERROR, INGRESO INCORRECTO-DEBE INGRESAR UNA OPCION ENTRE 0 o 2 ",TitulosPantallas.TITULOPAGOSRECARGAS.descripcion, ERROR_MESSAGE);
                 bandera = false;
             }
         }while(!bandera);
