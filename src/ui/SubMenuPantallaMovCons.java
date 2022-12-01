@@ -7,6 +7,9 @@ import ui.movimientosConsultas.SubPantallasMovimientosConsultas;
 
 import javax.swing.*;
 
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
+import static javax.swing.JOptionPane.showMessageDialog;
+
 public class SubMenuPantallaMovCons {
    private Validaciones validaciones = new Validaciones();
     public void pantallaSubMenuMovconsultas(CtaBancaria ctaBancaria){
@@ -23,10 +26,13 @@ public class SubMenuPantallaMovCons {
                     .append("0<--------VOLVER                                  ")
                     .toString(), TitulosPantallas.TITULOMOVIMIENTOCONSULTAS.descripcion, 1);;
             opcion=opcion==null?"0":opcion;
-            if(opcion.equals("0")||validaciones.esUnNumero(opcion)) {
+            if(validaciones.esUnNumero(opcion) && (Integer.parseInt(opcion) >= 0 && Integer.parseInt(opcion) < 5)) {
                 bandera = true;
-            }else {
-                JOptionPane.showMessageDialog(null, "ERROR, INGRESO INCORRECTO ", TitulosPantallas.TITULOMOVIMIENTOCONSULTAS.descripcion, JOptionPane.ERROR_MESSAGE);
+            }else if(!validaciones.esUnNumero(opcion)){
+                showMessageDialog(null, "ERROR, INGRESO INCORRECTO-DEBE INGRESAR UN VALOR NÚMERICO ",TitulosPantallas.TITULOMOVIMIENTOCONSULTAS.descripcion, ERROR_MESSAGE);
+                bandera = false;
+            }else if(validaciones.esUnNumero(opcion) && (Integer.parseInt(opcion) > 5 || Integer.parseInt(opcion)<0)) {
+                showMessageDialog(null, "ERROR, INGRESO INCORRECTO-DEBE INGRESAR UNA OPCION ENTRE 0 o 4 ",TitulosPantallas.TITULOMOVIMIENTOCONSULTAS.descripcion, ERROR_MESSAGE);
                 bandera = false;
             }
         }while(!bandera);

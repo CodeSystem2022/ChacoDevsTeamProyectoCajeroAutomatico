@@ -9,7 +9,9 @@ import javax.swing.*;
 
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
-
+/*
+ *Clase PantallaSubMenuPrestamos: esta clase crea la pantalla principal del submenu prestamos
+ */
 public class PantallaSubMenuPrestamos {
     private Validaciones validaciones = new Validaciones();
     public void generarPantallaPrestamos(CtaBancaria ctaBancaria){
@@ -28,19 +30,19 @@ public class PantallaSubMenuPrestamos {
                         .append("0<--------------------VOLVER               \n")
                         .toString(), TitulosPantallas.TITULOPRESTAMOS.descripcion,1);
             opcion=opcion==null?"0":opcion;
-            if(validaciones.esUnNumero(opcion) && (Integer.parseInt(opcion) >= 0 && Integer.parseInt(opcion) < 4)) {
+            if(validaciones.esUnNumero(opcion) && (Integer.parseInt(opcion) >= 0 && Integer.parseInt(opcion) < 2)) {
                 bandera = true;
             }else if(!validaciones.esUnNumero(opcion)){
                 showMessageDialog(null, "ERROR, INGRESO INCORRECTO-DEBE INGRESAR UN VALOR NÚMERICO ",TitulosPantallas.TITULOPRESTAMOS.descripcion, ERROR_MESSAGE);
                 bandera = false;
-            }else if(validaciones.esUnNumero(opcion) && (Integer.parseInt(opcion) > 3 || Integer.parseInt(opcion)<0)) {
+            }else if(validaciones.esUnNumero(opcion) && (Integer.parseInt(opcion) > 1 || Integer.parseInt(opcion)<0)) {
                 showMessageDialog(null, "ERROR, INGRESO INCORRECTO-DEBE INGRESAR UNA OPCION ENTRE 0 o 1 ",TitulosPantallas.TITULOPRESTAMOS.descripcion, ERROR_MESSAGE);
                 bandera = false;
             }
         }while(!bandera);
         opcionSeleccion(Integer.parseInt(opcion), ctaBancaria);
     }
-
+    //Metodo de seleccion de opcion de usuario
     public  void opcionSeleccion(int opcion, CtaBancaria ctaBancaria) {
         SubPantallaPrestamos subPantallaPrestamos = new SubPantallaPrestamos();
             switch (opcion) {
