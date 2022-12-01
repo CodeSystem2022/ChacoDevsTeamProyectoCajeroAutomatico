@@ -7,12 +7,12 @@ import ui.extraccionesydepositos.Depositos;
 import ui.extraccionesydepositos.Extracciones;
 
 import javax.swing.*;
-
-
+/*
+ * Clase DepositosExtracciones: esta clase se encargara de crear la pantalla del submenu Depositos y extracciones
+ * donde muestra las opciones que podra seleccionar el usuario
+ */
 public class DepositoExtracciones {
 private Validaciones validaciones = new Validaciones();
-
-
     public void menuDepoExtrac(CtaBancaria ctaBancaria){
         String opcion="0";
         boolean bandera = false;
@@ -36,7 +36,7 @@ private Validaciones validaciones = new Validaciones();
         }while(!bandera);
         opciones(Integer.parseInt(opcion), ctaBancaria);
     }
-
+    //Metodo opciones: se encargara de derivar al usuario a las siguientes subpantallas
     public void opciones(int opcion, CtaBancaria ctaBancaria) {
         Extracciones extracciones = new Extracciones();
         Depositos depositos = new  Depositos();

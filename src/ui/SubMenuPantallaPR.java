@@ -6,6 +6,13 @@ import domain.CtaBancaria;
 import domain.TitulosPantallas;
 import ui.pagosyrecargas.SubPantallaPagos;
 import ui.pagosyrecargas.SubPantallaRecarga;
+
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
+import static javax.swing.JOptionPane.showMessageDialog;
+
+/*
+ *Clase SubMenuPantallaPR: esta clase crea la pantalla principal del submenu pagos y recargas
+ */
 public class SubMenuPantallaPR {
     private Validaciones validaciones = new Validaciones();
     public void pantallaSubMenuPagosRecargas(CtaBancaria ctaBancaria){
@@ -21,16 +28,19 @@ public class SubMenuPantallaPR {
                 .append("0<---- VOLVER                                             \n")                            
                 .toString(), TitulosPantallas.TITULOPAGOSRECARGAS.descripcion,1);
             opcion=opcion==null?"0":opcion;
-            if(opcion.equals("0")||validaciones.esUnNumero(opcion)) {
+            if(validaciones.esUnNumero(opcion) && (Integer.parseInt(opcion) >= 0 && Integer.parseInt(opcion) < 4)) {
                 bandera = true;
-            }else {
-                JOptionPane.showMessageDialog(null, "ERROR, INGRESO INCORRECTO ", TitulosPantallas.TITULOMOVIMIENTOCONSULTAS.descripcion, JOptionPane.ERROR_MESSAGE);
+            }else if(!validaciones.esUnNumero(opcion)){
+                showMessageDialog(null, "ERROR, INGRESO INCORRECTO-DEBE INGRESAR UN VALOR NÚMERICO ",TitulosPantallas.TITULOPAGOSRECARGAS.descripcion, ERROR_MESSAGE);
+                bandera = false;
+            }else if(validaciones.esUnNumero(opcion) && (Integer.parseInt(opcion) > 3 || Integer.parseInt(opcion)<0)) {
+                showMessageDialog(null, "ERROR, INGRESO INCORRECTO-DEBE INGRESAR UNA OPCION ENTRE 0 o 1 ",TitulosPantallas.TITULOPAGOSRECARGAS.descripcion, ERROR_MESSAGE);
                 bandera = false;
             }
         }while(!bandera);
         opcionSeleccion(Integer.parseInt(opcion), ctaBancaria);
     }
-
+    //Metodo de seleccion de opcion de usuario
     public void opcionSeleccion(int opcion, CtaBancaria ctaBancaria) {
         SubPantallaRecarga subPantallaRecarga = new SubPantallaRecarga();
         SubPantallaPagos subpantallaPagos = new SubPantallaPagos();

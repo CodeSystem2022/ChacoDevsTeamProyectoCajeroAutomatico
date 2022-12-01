@@ -1,4 +1,4 @@
-package ui.editardatos;
+package ui.datospersonales;
 
 import domain.CtaBancaria;
 import domain.Domicilio;
@@ -8,8 +8,13 @@ import domain.TitulosPantallas;
 import javax.swing.*;
 import java.awt.*;
 
-
-public class PantallaSubMenuEdDatPersonal {
+/*
+ * Clase PantallaSubmenuDatPersonales: esta clase creara contendra 2 metodos:
+ * 1:editarDatos: creara un formulario donde el usuario podra cargar sus datos personales
+ * 2:verDatos: el usuario podra ver sus datos personales
+ */
+public class PantallaSubMenuDatPersonales {
+    //Metodo editarDatos: creara el formulario con los campos para editar los datos personales
     public void editarDatos(CtaBancaria ctaBancaria) {
         JFrame frame;
         JPanel pane;
@@ -21,7 +26,6 @@ public class PantallaSubMenuEdDatPersonal {
         JTextField direccionField;
         frame = new JFrame("                  EDITAR DATOS PERSONALES                  \n " +
                 "\n");
-
         long dni = 0;
         pane = new JPanel();
         pane.setLayout(new GridLayout(0, 2, 2, 2));
@@ -45,11 +49,18 @@ public class PantallaSubMenuEdDatPersonal {
         pane.add(provinciaField);
         pane.add(new JLabel("Direccion: "));
         pane.add(direccionField);
-
+        //Cargo los datos ya guardados en el atributo persona de la cta bancaria
+        if(ctaBancaria.getPersona()!=null) {
+            nombreField.setText(ctaBancaria.getPersona().getNombre());
+            apellidoField.setText(ctaBancaria.getPersona().getApellido());
+            dniField.setText(String.valueOf(ctaBancaria.getPersona().getDni()));
+            localidadField.setText(ctaBancaria.getPersona().getDomicilio().getLocalidad());
+            provinciaField.setText(ctaBancaria.getPersona().getDomicilio().getProvincia());
+            direccionField.setText(ctaBancaria.getPersona().getDomicilio().getDireccion());
+        }
         int option = JOptionPane.showConfirmDialog(frame, pane, "EDITAR DATOS PERSONALES", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
 
         if (option == JOptionPane.YES_OPTION) {
-
             String nombreInput = nombreField.getText();
             String apellidoInput = apellidoField.getText();
             String dniInput = dniField.getText();
@@ -62,6 +73,7 @@ public class PantallaSubMenuEdDatPersonal {
             } catch (NumberFormatException nfe) {
                 nfe.printStackTrace();
             }
+            //Realizo la actualizacion de los datos
             try {
                 Persona persona = new Persona();
                 persona.setApellido(apellidoInput);
@@ -79,6 +91,8 @@ public class PantallaSubMenuEdDatPersonal {
             }
         }
     }
+    //Metodo verDatos: mostrara los datos personales guardados en el atributo Persona de la CtaBancaria, en caso de que
+    //no se haya guardado nada informara al usuario que debe cargar sus datos.
     public void verDatos(CtaBancaria ctaBancaria) {
         if(ctaBancaria.getPersona()!=null) {
             JOptionPane.showMessageDialog(null,ctaBancaria.getPersona().toString(), TitulosPantallas.TITULODATOSPERSONALES.descripcion, JOptionPane.INFORMATION_MESSAGE);

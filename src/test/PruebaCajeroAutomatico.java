@@ -16,7 +16,7 @@ public class PruebaCajeroAutomatico {
        System.exit(0);
     }
     //Metodo de inicializacion donde creo la pantalla de loggin y hasta que no se proporcion un valor correspondiente
-    //no prosigue
+    //no prosigue(cuenta:admin pass: 1234 o crear cuenta personal)
     public static void init(){
         PantallaLogin pantallaLogin = new PantallaLogin();
         boolean bandera=false;
@@ -32,7 +32,7 @@ public class PruebaCajeroAutomatico {
         DepositoExtracciones depositoExtracciones = new DepositoExtracciones();
         MenuTransferencia transferencias = new MenuTransferencia();
         SubMenuPantallaPR subMenuPantallaPR = new SubMenuPantallaPR();
-        PantallaEditarVerDatos pantallaEdDatosPersonales = new PantallaEditarVerDatos();
+        PantallaDatosPersonales pantallaEdDatosPersonales = new PantallaDatosPersonales();
         PantallaSubMenuPrestamos pantallaSubMenuPrestamos = new PantallaSubMenuPrestamos();
            switch(opcion) {
                case 1: transferencias.pantallaSubMenuMovconsultas(ctaBancaria);

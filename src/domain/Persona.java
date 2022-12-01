@@ -54,7 +54,8 @@ public class Persona {
     public String toString() {
         final StringBuilder sb = new StringBuilder()
                 .append("                   DATOS PERSONALES                      \n")
-                .append("NOMBRE: " + this.getNombre() + "-APELLIDO: " + this.getApellido() + "\n")
+                .append("NOMBRE: " + this.getNombre() +"\n")
+                .append("APELLIDO: " + this.getApellido() + "\n")
                 .append("DNI: " + this.getDni() + "               \n")
                 .append("DOMICILIO: " +this.getDomicilio().getDireccion() + "\n")
                 .append("LOCALIDAD: " + this.getDomicilio().getLocalidad() + "\n")
