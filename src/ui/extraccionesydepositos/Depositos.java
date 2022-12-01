@@ -50,49 +50,49 @@ public class Depositos {
         Movimiento movimiento =new Movimiento();
 
         switch (parseInt) {
-            case 1 -> {
+            case 1:
                 movimiento.setFecha(new Date());
                 movimiento.setMontoOperacion(10000);
                 movimiento.setTipoOperacion(DEPOSITO);
                 ctaBancaria.guardarValidarMovimiento(movimiento);
                 mostrarMensajeDeposito(ctaBancaria, 10000);
-            }
-            case 2 -> {
+                 break;
+            case 2: 
                 movimiento.setFecha(new Date());
                 movimiento.setMontoOperacion(8000);
                 movimiento.setTipoOperacion(DEPOSITO);
                 ctaBancaria.guardarValidarMovimiento(movimiento);
                 mostrarMensajeDeposito(ctaBancaria, 8000);
-            }
-            case 3 -> {
+                 break;
+            case 3 :
                 movimiento.setFecha(new Date());
                 movimiento.setMontoOperacion(6000);
                 movimiento.setTipoOperacion(DEPOSITO);
                 ctaBancaria.guardarValidarMovimiento(movimiento);
                 mostrarMensajeDeposito(ctaBancaria, 6000);
-            }
-            case 4 -> {
+                 break;
+            case 4 :
                 movimiento.setFecha(new Date());
                 movimiento.setMontoOperacion(4000);
                 movimiento.setTipoOperacion(DEPOSITO);
                 ctaBancaria.guardarValidarMovimiento(movimiento);
                 mostrarMensajeDeposito(ctaBancaria, 4000);
-            }
-            case 5 -> {
+                 break;
+            case 5 :
                 movimiento.setFecha(new Date());
                 movimiento.setMontoOperacion(2000);
                 movimiento.setTipoOperacion(DEPOSITO);
                 ctaBancaria.guardarValidarMovimiento(movimiento);
                 mostrarMensajeDeposito(ctaBancaria, 2000);
-            }
-            case 6 -> {
+                break;
+            case 6 :
                 movimiento.setFecha(new Date());
                 movimiento.setMontoOperacion(1000);
                 movimiento.setTipoOperacion(DEPOSITO);
                 ctaBancaria.guardarValidarMovimiento(movimiento);
                 mostrarMensajeDeposito(ctaBancaria, 1000);
-            }
-            case 7 -> {
+                break;
+            case 7 :
                 double monto = ingresoManual();
                 if (monto > 0) {
                     movimiento.setFecha(new Date());
@@ -100,12 +100,12 @@ public class Depositos {
                     movimiento.setTipoOperacion(DEPOSITO);
                     ctaBancaria.guardarValidarMovimiento(movimiento);
                     mostrarMensajeDeposito(ctaBancaria, monto);
-                }
+                    break;
             }
-            case 0 -> depositoExtracciones.menuDepoExtrac(ctaBancaria);
-
-            default -> JOptionPane.showMessageDialog(null, ERROR, TitulosPantallas.TITULODEPTRANS.descripcion, JOptionPane.ERROR_MESSAGE);
-
+            case 0 : depositoExtracciones.menuDepoExtrac(ctaBancaria);
+                     break;
+            default : JOptionPane.showMessageDialog(null, ERROR, TitulosPantallas.TITULODEPTRANS.descripcion, JOptionPane.ERROR_MESSAGE);
+                      break;
         }
 
     }
