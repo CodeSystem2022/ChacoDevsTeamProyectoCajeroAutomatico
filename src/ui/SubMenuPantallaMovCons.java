@@ -9,7 +9,11 @@ import javax.swing.*;
 
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
-
+/*
+*Clase SubMenuPantallaMovCons: Esta clase se encargará de crear un menu, para que el usuario
+* ingrese una opción para seleccionar un proceso en relación a los datos guardados en la
+* cuenta bancaria.
+ */
 public class SubMenuPantallaMovCons {
    private Validaciones validaciones = new Validaciones();
     public void pantallaSubMenuMovconsultas(CtaBancaria ctaBancaria){
@@ -38,6 +42,7 @@ public class SubMenuPantallaMovCons {
         }while(!bandera);
         opcionSeleccion(Integer.parseInt(opcion), ctaBancaria);
         }
+    //Métoto opcionSeleccion: este método se encargará de derivar al usuario a los diferentes procesos.
     public void opcionSeleccion(int opcion, CtaBancaria ctaBancaria) {
         SubPantallasMovimientosConsultas subPantallasMovimientosConsultas = new SubPantallasMovimientosConsultas();
 
