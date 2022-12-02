@@ -65,4 +65,5 @@ Listado de Integrantes
 
 
 
-![Modelado Clases](https://user-images.githubusercontent.com/70241433/201673410-9623a897-3f9e-4b70-a9c3-3b2459268cc8.png)
+
+![domain CtaBancaria](https://user-images.githubusercontent.com/70241433/205212458-7a0bf349-2d39-4c49-870c-2392428f6193.png)
