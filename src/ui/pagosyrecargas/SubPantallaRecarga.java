@@ -9,13 +9,17 @@ import javax.swing.*;
 import domain.Movimiento;
 import domain.TitulosPantallas;
 import ui.SubMenuPantallaPR;
-
+/*
+* Clase SubPantallaRecarga: Esta clase se encarga de mostrar por pantalla el sub-menu
+* de recargas con las opciones de Transporte publico y Telefonia Celular.
+*/
 
 public class SubPantallaRecarga {
     private Validaciones validaciones = new Validaciones();
     private Movimiento movimiento = new Movimiento();
     private SubMenuPantallaPR subMenuPantallaPR = new SubMenuPantallaPR();
-    //Creo las pantallas
+    //Este metodo crea la pantalla del SubMenuRecargas donde mostramos
+    // las opciones a elegir por el usuario
     public void pantallaSubMenuRecargas(CtaBancaria ctaBancaria){
         String opcion="0";
         boolean bandera = false;
@@ -37,6 +41,8 @@ public class SubPantallaRecarga {
         }while(!bandera);
             seleccionDeOpcion(ctaBancaria,Integer.parseInt(opcion));
     }
+   //Este metodo crea la pantalla del SubMenuRecargasTelefonia donde mostramos
+    // las opciones de las empresas de telefonia a recargar
     public void pantallaSubmenuRecargasTelefonia(CtaBancaria ctaBancaria){
         String opcion="0";
         boolean bandera = false;
@@ -61,7 +67,8 @@ public class SubPantallaRecarga {
         opcionSeleccionTelefonia(Integer.parseInt(opcion),ctaBancaria);
     }
 
-    //Metodo para guardar el movimiento de transporte
+    //Metodo para guardar el movimiento de recarga de transporte
+    // el cual se guardara en la coleccion de movimientos de la cta Bancaria
     public void pantallaSubmenuRecargasTransporte(CtaBancaria ctaBancaria){
         String opcion="0";
         boolean bandera = false;
@@ -94,7 +101,9 @@ public class SubPantallaRecarga {
         }
     }
 
-    //Metodo de seleccion TRANSPORTE de opcion ingresada
+    //Este metodo se encargara de derivar segun la opcion ingresada 
+    // al metodo de recarga correspondiente 
+    
         public void seleccionDeOpcion(CtaBancaria ctaBancaria, int opcion) {
             switch (opcion) {
                 case 1: pantallaSubmenuRecargasTransporte(ctaBancaria);
@@ -111,7 +120,9 @@ public class SubPantallaRecarga {
                     break;
             }
     }
-        //Metodo de seleccion Telefonia de opcion ingresada
+        //Este metodo se encargara  segun la opcion ingresada de llamar al metodo 
+        // pantalla pantallaSubmenuRecargasTelefonia donde pasaremos la empresa 
+        // telefonica seleccionada y la cta Bancaria 
         public void opcionSeleccionTelefonia(int opcion,CtaBancaria ctaBancaria) {
             switch (opcion) {
                 case 1: pantallaSubmenuRecargasTelefonia("PERSONAL",ctaBancaria);
@@ -132,7 +143,7 @@ public class SubPantallaRecarga {
         }
 
     }
-    //Metodo para guardar el movimiento de telefonia
+    //Metodo para guardar el movimiento de Recarga de telefonia
     public void pantallaSubmenuRecargasTelefonia(String compañia, CtaBancaria ctaBancaria){
         Movimiento movGuardar =oPaneDosInputs(compañia);
         if(movGuardar!=null) {
@@ -144,7 +155,8 @@ public class SubPantallaRecarga {
             this.pantallaSubmenuRecargasTelefonia(ctaBancaria);
         }
 
-    //Metodo de creacion de pantalla con 2 inputs
+    //Metodo de creacion de pantalla con 2 inputs para poder ingresar
+    // el numero de cliente y el monto de la recarga a realizar
     private Movimiento oPaneDosInputs(String accion) {
         JFrame frame;
         JPanel pane;
